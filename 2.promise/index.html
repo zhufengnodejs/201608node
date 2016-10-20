@@ -7,11 +7,32 @@
 <body>
 
 <script>
-    function ajax(){
-
+    function ajax({url,method,dataType}) {
+        return new Promise((reslove, reject) => {
+            let xhr = new XMLHttpRequest();
+            xhr.open(method, url, true);
+            if(dataType =='json')
+                xhr.responseType = 'json';
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                      /*  if(dataType =='json'){
+                            reslove(JSON.parse(xhr.responseText));
+                        }else{
+                            reslove(xhr.responseText);
+                        }*/
+                        reslove(xhr.response);
+                    } else {
+                        reject(xhr.responseText);
+                    }
+                }
+            };
+            xhr.send();
+        });
     }
+
     ajax({
-        url:'user.json',
+        url:'users.json',
         method:'GET',
         dataType:'json'
     }).then(function(data){
