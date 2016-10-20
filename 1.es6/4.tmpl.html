@@ -9,8 +9,33 @@
 
 </ul>
 <script>
-    var arr = [{id:1,name:'zfpx1'},{id:2,name:'zfpx2'},{id:3,name:'zfpx3'}];
-    //---
+    var arr = [{id: 1, name: 'zfpx1'}, {id: 2, name: 'zfpx2'}, {id: 3, name: 'zfpx3'}];
+    /* 第一种
+     var str = '';
+     arr.forEach(function(item){
+     str += `<li>
+     ${item.id}:${item.name}
+     </li>`;
+     });
+     document.querySelector('#content').innerHTML = str;*/
+
+    /**
+     * 第二种
+     */
+    /*document.querySelector('#content').innerHTML = arr.map(function (item) {
+        return `<li>${item.id}:${item.name}</li>`
+    }).join('');*/
+
+    /**
+     * 第三种
+     */
+    var ul = document.querySelector('#content');
+    arr.forEach(function(item){
+        let li = document.createElement('li');
+        li.innerHTML = `${item.id}:${item.name}`;
+        ul.appendChild(li);
+    })
+
 </script>
 </body>
 </html>
