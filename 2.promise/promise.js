@@ -10,11 +10,30 @@ function Promise(fn){
    var resolve = data =>  this.onSuccess(data);
    //2. 声明一个reject
    var reject = error => this.onFail(error);
-   fn(resolve,reject);
+   fn(this.resolve,this.reject);
 }
 Promise.prototype.then = function(onSuccess,onFail){
     this.onSuccess = onSuccess;
     this.onFail= onFail;
 }
+/**
+ * es5->es6
+ * 1. 构造函数的代码拷贝到constructor
+ * 2.把原型上定义的方法在类里直接定义就可以了
+ */
+/*
+class Promise {
+    constructor(fn) {
+        var resolve = data => this.onSuccess(data);
+        var reject = error => this.onFail(error);
+        fn(resolve, reject);
+    }
+    then(onSuccess, onFail) {
+        this.onSuccess=onSuccess;
+        this.onFail=onFail;
+    }
+}
+*/
+
 
 module.exports = Promise;
