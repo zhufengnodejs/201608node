@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        .ball{
-            width:100px;
-            height:100px;
+        .ball {
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
         }
-        .ball1{
+
+        .ball1 {
             background-color: red;
         }
-        .ball2{
+
+        .ball2 {
             background-color: yellow;
         }
-        .ball3{
+
+        .ball3 {
             background-color: blue;
         }
     </style>
@@ -28,22 +31,44 @@
     var ball1 = document.querySelector('.ball1');
     var ball2 = document.querySelector('.ball2');
     var ball3 = document.querySelector('.ball3');
-    function move(element,target,callback){
-        setTimeout(function(){
-            var left = parseInt(element.style.marginLeft,10);
-            if(left<target){
-                element.style.marginLeft = (left+1)+'px';
-                move(element,target,callback)
-            }else{
-                callback && callback();
-            }
-        },13);
+    /*  function move(element,target,callback){
+     setTimeout(function(){
+     var left = parseInt(element.style.marginLeft,10);
+     if(left<target){
+     element.style.marginLeft = (left+1)+'px';
+     move(element,target,callback)
+     }else{
+     callback && callback();
+     }
+     },13);
+     }
+     move(ball1,100,function(){
+     move(ball2,100,function(){
+     move(ball3,100);
+     });
+     });*/
+
+    function move(element, target) {
+        return new Promise(function (resolve) {
+            var left = parseInt(getComputedStyle(element, null)['marginLeft']);
+            element.timer = setInterval(function () {
+                if (left < target) {
+                    element.style.marginLeft = ++left + 'px';
+                } else {
+                    clearInterval(element.timer);
+                    resolve && resolve();
+                }
+            }, 13)
+        })
     }
-    move(ball1,100,function(){
-        move(ball2,100,function(){
-            move(ball3,100);
-        });
-    });
+    move(ball1, 100)
+            .then(function () {
+                return move(ball2, 100);
+            })
+            .then(function () {
+                return move(ball3, 100);
+            })
+
 </script>
 </body>
 </html>
