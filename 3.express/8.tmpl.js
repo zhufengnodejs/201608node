@@ -7,10 +7,12 @@ var path = require('path');
 var fs = require('fs');
 var app = express();
 //设置模板引擎为EJS，模板要按EJS规定的格式来写，渲染的时候也要按照ejs来进行渲染
-app.set('view engine','ejs');
+app.set('view engine','html');// 把engine改成html
 //设置模板的存放目录的绝对路径
 // __dirname = E:\201608node\3.express\views
 app.set('views',path.join(__dirname,'views'));
+//设置针对html后缀的模板，使用ejs引擎来进行渲染
+app.engine('html',require('ejs').__express);
 app.get('/public/bootstrap.min.css',function(req,res){
     //直接把一个文件发送给客户端 参数是一个文件的绝对路径
     res.sendFile(path.join(__dirname,'public','bootstrap.min.css'));
