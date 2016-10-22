@@ -1,13 +1,22 @@
 /*
+var express = require('express');
+var app = express();
+app.set('name','zfpx');
+app.name = 'zfpx';
+console.log(app.get('name'));
+console.log(app.name);
 var path = require('path');
-// windows \
-// linux /
-console.log('a'+'\\'+'b'+'\\'+'c');
-console.log(path.join('a','b','c'));
-// 八*/
-var data = {title:'用户列表'};
-var str = 'i love <%=title%> !';
-str = str.replace(/<%=(\w+)%>/,function(input,group1){
-    return data[group1];
-});
-console.log(str);
+console.log(path.join('a','b'));*/
+var name = 'zfpx';
+var age = 8;
+var tmpl = '${name} is ${age} years old';
+function render(tmpl){
+    return tmpl.replace(/\$\{(\w+)\}/g, function (t1,t2) {
+        return eval(t2);
+    })
+}
+/*var attr = 'name';
+console.log(eval(attr));
+return 'zfpx is 8 years old';*/
+console.log(render(tmpl));
+//'zfpx is 8 years old'

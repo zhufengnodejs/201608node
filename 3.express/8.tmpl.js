@@ -28,10 +28,24 @@ app.use(function(req,res,next){
     }
     next();
 });
-app.get('/public/bootstrap.min.css',function(req,res){
+//写一个静态文件中间件，可以拦截所有的静态文件请求，当有静态文件请求的时候会把静态文件目录下面找到对应的文件，如果找到了，则读出来返回给客户端，如果没找到，继续 向下寻找合适的路由来进行处理
+app.use(function(req,res,next){
+    var filepath = req.path; //    /css/bootstrap.min.css
+    filepath = path.join(__dirname,'public',filepath);
+    fs.exists(filepath,function(exists){
+        if(exists){
+            fs.createReadStream(filepath).pipe(res);
+        }else{
+            next();
+        }
+    })
+});
+//静态文件中间件是express唯一的官方认证的 自带的中间件
+app.use(express.static(path.join(__dirname,'public')));
+/*app.get('/public/bootstrap.min.css',function(req,res){
     //直接把一个文件发送给客户端 参数是一个文件的绝对路径
     res.sendFile(path.join(__dirname,'public','bootstrap.min.css'));
-});
+});*/
 
 /**
  * 当客户端通过GET请求访问服务器/users路径的时候
@@ -47,7 +61,7 @@ app.use(function(req,res,next){
      * 3. 把替换后的结果发送给客户端
      */
    res.render = function(tmplName,data){
-       //读取模板的文件内容
+       //得到模板文件的绝对路径，并且读取模板的文件内容
       fs.readFile(path.join(app.get('views'),tmplName),'utf8',function(err,result){
           result = result.replace(/<%=(\w+)%>/g,function(input,group1){
                 // data={title:'用户列表'}
