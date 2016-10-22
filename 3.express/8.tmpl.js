@@ -13,7 +13,9 @@ app.set('views',path.join(__dirname,'views'));
 /**
  * 当客户端通过GET请求访问服务器/users路径的时候
  * 1. 读取users.json文件，得到一个JSON数组
- * 2.
+ * 2. 使用res.render渲染模板，并提供数据对象，需要二个属性，一个是title
+ * 另外一个是users的JSON数组
+ * 3. 在页面中读取此users的JSON数组并进行循环，生成跟数组元素个数相同的li标签
  */
 app.get('/users',function(req,res){
     //模板是一个相对路径，
