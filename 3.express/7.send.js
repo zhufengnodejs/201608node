@@ -9,7 +9,7 @@ app.use(function (req, res, next) {
     // 1.如果是字符串，直接end
     // 2.如果是对象转成字符串再end.
     // 3.如果是数字则设置响应的状态码并且把此状态的描述短语设置为响应体
-    res.send = function (param) {
+   /* res.send = function (param) {
         if (typeof param === 'string' || Buffer.isBuffer(param)) {
             res.end(param);
         } else if (Object.prototype.toString.call(param) === '[object Object]') {
@@ -30,7 +30,7 @@ app.use(function (req, res, next) {
                     break;
             }
         }
-    }
+    }*/
     next();
 });
 app.get('/', function (req, res) {
