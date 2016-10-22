@@ -9,9 +9,8 @@
 <body>
 <%=title%>
 <ul class="list-group">
-    <li class="list-group-item">1:zfpx1</li>
-<%for(var i=0;i<10;i++){%>
-      <span>用户</span>:<%=i%>
+<%for(var i=0;i<users.length;i++){%>
+    <li class="list-group-item"><%=users[i].id%>:<%=users[i].name%></li>
 <%}%>
 </ul>
 </body>
