@@ -29,17 +29,20 @@ app.use(function(req,res,next){
     next();
 });
 //写一个静态文件中间件，可以拦截所有的静态文件请求，当有静态文件请求的时候会把静态文件目录下面找到对应的文件，如果找到了，则读出来返回给客户端，如果没找到，继续 向下寻找合适的路由来进行处理
-app.use(function(req,res,next){
-    var filepath = req.path; //    /css/bootstrap.min.css
-    filepath = path.join(__dirname,'public',filepath);
-    fs.exists(filepath,function(exists){
-        if(exists){
-            fs.createReadStream(filepath).pipe(res);
-        }else{
-            next();
-        }
-    })
-});
+express.static  = function(root){
+    return function(req,res,next){
+        var filepath = req.path; //    /css/bootstrap.min.css
+        filepath = path.join(root,filepath);
+        fs.exists(filepath,function(exists){
+            if(exists){
+                fs.createReadStream(filepath).pipe(res);
+            }else{
+                next();
+            }
+        })
+    }
+}
+
 //静态文件中间件是express唯一的官方认证的 自带的中间件
 app.use(express.static(path.join(__dirname,'public')));
 /*app.get('/public/bootstrap.min.css',function(req,res){
