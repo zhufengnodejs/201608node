@@ -10,6 +10,11 @@ app.set('view engine','ejs');
 //设置模板的存放目录的绝对路径
 // __dirname = E:\201608node\3.express\views
 app.set('views',path.join(__dirname,'views'));
+app.get('/public/bootstrap.min.css',function(req,res){
+    //直接把一个文件发送给客户端 参数是一个文件的绝对路径
+    res.sendFile(path.join(__dirname,'public','bootstrap.min.css'));
+});
+
 /**
  * 当客户端通过GET请求访问服务器/users路径的时候
  * 1. 读取users.json文件，得到一个JSON数组
@@ -17,8 +22,10 @@ app.set('views',path.join(__dirname,'views'));
  * 另外一个是users的JSON数组
  * 3. 在页面中读取此users的JSON数组并进行循环，生成跟数组元素个数相同的li标签
  */
+
 app.get('/users',function(req,res){
     //模板是一个相对路径，
-   res.render('users.ejs',{title:'用户列表'});
+   res.render('users',{title:'用户列表'});
 });
+// /public/bootstrap.min.css
 app.listen(8080);

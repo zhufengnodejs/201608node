@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title><%=title%></title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/bootstrap.min.css">
 </head>
 <body>
 <%=title%>
 <ul class="list-group">
-<%
-  for(var i=0;i<10;i++){%>
+    <li class="list-group-item">1:zfpx1</li>
+<%for(var i=0;i<10;i++){%>
       <span>用户</span>:<%=i%>
-    <%}
- %>
+<%}%>
 </ul>
 </body>
 </html>
