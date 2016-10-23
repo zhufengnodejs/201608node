@@ -1,3 +1,11 @@
 <%- include include/header.html%>
-书籍详情
+<div class="panel panel-default">
+    <div class="panel-heading text-center"><%=book.name%></div>
+    <div class="panel-body">
+        <img class="img-rounded" src="<%=books.cover%>" alt="">
+    </div>
+    <div class="panel-footer text-center">
+        价格: <%=books.price%>
+    </div>
+</div>
 <%- include include/footer.html%>

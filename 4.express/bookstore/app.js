@@ -78,6 +78,12 @@ app.get('/book/list', function (req, res) {
         res.render('list', {title: '书籍列表',books});
     })
 });
+/**
+ * 点击封面图进入详情页
+ * 1. 给封面图增加A链接 /book/detail/1
+ * 2. 编写路由，在路由里先得到客户端传过来id 1,然后找到对应的书籍详情 find
+ * 3. 使用找到的对应的书籍对象渲染详情页
+ */
 app.get('/book/detail/:id', function (req, res) {
     res.render('detail', {title: '书籍详情'});
 });

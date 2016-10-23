@@ -1,16 +1,5 @@
-var fs = require('fs');
-function setBooks(books, callback) {
-    fs.writeFile('./users.json', JSON.stringify(books), 'utf8', function (err) {
-        if (err) {
-            books = [];
-            setBooks(books, callback);
-            callback();
-        } else {
-            callback();
-        }
-    })
-}
-setBooks('sdfasdfsa1',function(){
-    console.log('ok');
-});
-console.log('over');
+var arr = [{id:1,name:'zfpx1'},{id:2,name:'zfpx2'}];
+var result = arr.find(function(item){
+    return item.id == 2;
+})
+console.log(result);
