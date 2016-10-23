@@ -10,7 +10,7 @@ app.engine('.html',require('ejs').__express);
 app.get('/',function(req,res){
     //1参数是模板相对于模板存放目录的相对路径
     //2参数是模板渲染时想使用的数据对象
-    res.render('index',{title:'首页'});
+    res.render('index.html',{title:'首页'});
 });
 app.get('/user',function(req,res){
     //1参数是模板相对于模板存放目录的相对路径
