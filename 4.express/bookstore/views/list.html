@@ -1,3 +1,19 @@
 <%- include include/header.html%>
-书籍列表
+<div class="row">
+    <%
+       for(var i=0;i<books.length;i++){%>
+    <div class="col-sm-4">
+        <div class="panel panel-default">
+            <div class="panel-heading text-center"><%=books[i].name%></div>
+            <div class="panel-body">
+                <img class="img-rounded" src="<%=books[i].cover%>" alt="">
+            </div>
+            <div class="panel-footer text-center">
+                价格: <%=books[i].price%>
+            </div>
+        </div>
+    </div>
+    <%}%>
+
+</div>
 <%- include include/footer.html%>
