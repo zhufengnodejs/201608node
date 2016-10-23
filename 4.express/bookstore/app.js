@@ -85,10 +85,25 @@ app.get('/book/list', function (req, res) {
  * 3. 使用找到的对应的书籍对象渲染详情页
  */
 app.get('/book/detail/:id', function (req, res) {
-    res.render('detail', {title: '书籍详情'});
+    var id = req.params.id;
+    getBooks(function(books){
+        var book = books.find(function(item){
+            return item.id == id
+        });
+        res.render('detail', {title: '书籍详情',book});
+    })
+
 });
 app.get('/book/delete/:id', function (req, res) {
-    res.render('list', {title: '书籍列表'});
+    var id = req.params.id;
+    getBooks(function(books){
+        books = books.filter(function(item){
+             return item.id != id;
+        });
+        setBooks(books,function(err){
+            res.redirect('/book/list');
+        })
+    })
 });
 //........
 app.listen(8080);
