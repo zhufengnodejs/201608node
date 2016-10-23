@@ -27,18 +27,39 @@ app.get('/book/add',function(req,res){
  * 3.向此数组中增加新的书籍对象,增加后把新的数组保存到文件系统中。
  * 4.重定向到书籍列表页
  */
+//获取书籍列表的json数组
+function getBooks(callback){
+  fs.readFile('./users.json','utf8',function(err,data){
+    var books = [];
+    if(err){
+      callback(books);
+    }else{
+       try{
+         books = JSON.parse(data);
+       }catch(e){
+         books = [];
+       }
+       callback(books);
+    }
+  })
+}
 app.post('/book/add',function(req,res){
   var book = req.body;//得到请求体 body-parser
-  fs.readFile('./users.json','utf8',function(err,data){//读取数据库文件
-    var books = JSON.parse(data);//转成json数组
-    book.id =  books[books.length-1].id+1;// 给新的书籍赋ID属性，就是最大的ID+1
+  getBooks(function(books){//读取数据库文件
+    book.id =  books.length==0?1:books[books.length-1].id+1;// 给新的书籍赋ID属性，就是最大的ID+1
     books.push(book);//追加到原数组中
     //把新数组保存到文件中去
     fs.writeFile('./users.json',JSON.stringify(books),'utf8',function(err){
       res.redirect('/book/list');//重定向到书籍列表
     })
-  })
+  });
+
 });
+/**
+ * 1. 文件有可能不存在
+ * 2. 文件存在但格式不是合法的json格式
+ * 3. 读取文件的代码散落在路由的各个角落
+ */
 app.get('/book/list',function(req,res){
   res.render('list',{title:'书籍列表'});
 });

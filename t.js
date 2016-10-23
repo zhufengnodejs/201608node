@@ -1,2 +1,7 @@
-var querystring = require('querystring');
-console.log(querystring.parse('name=zfpx&age=9'));
+var s = [];
+try{
+    s = JSON.parse('{"id":1}');
+}catch(e){
+    s = []
+}
+console.log(s);
