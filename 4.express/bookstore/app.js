@@ -19,8 +19,15 @@ app.get('/',function(req,res){
 app.get('/book/add',function(req,res){
   res.render('add',{title:'增加书籍'});
 });
+//提交增加书籍的表单
+/**
+ * 1.得到请求体对象
+ * 2.读取user.json文件，并把对应的字符串转成json数组
+ * 3.向此数组中增加新的书籍对象,增加后把新的数组保存到文件系统中。
+ * 4.重定向到书籍列表页
+ */
 app.post('/book/add',function(req,res){
-  res.render('add',{title:'增加书籍'});
+
 });
 app.get('/book/list',function(req,res){
   res.render('list',{title:'书籍列表'});
