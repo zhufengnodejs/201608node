@@ -1,3 +1,14 @@
 [
-  {"id":1,"name":"JavaScript高级编程","img":"http://img0.ph.126.net/xeoAcDU9-SAUHG1HVd_Ruw==/6608873023980315858.jpg","price":10}
+  {
+    "id": 1,
+    "name": "JavaScript高级编程",
+    "img": "http://img0.ph.126.net/xeoAcDU9-SAUHG1HVd_Ruw==/6608873023980315858.jpg",
+    "price": 10
+  },
+  {
+    "name": "javascript",
+    "cover": "http://img0.ph.126.net/xeoAcDU9-SAUHG1HVd_Ruw==/6608873023980315858.jpg",
+    "price": "20",
+    "id": 2
+  }
 ]
