@@ -1,4 +1,4 @@
  var a = 10;
- function say(){
+ var say = ()=>{
      console.log('hello');
  }

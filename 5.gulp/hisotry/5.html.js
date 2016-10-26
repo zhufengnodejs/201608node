@@ -10,25 +10,19 @@
  3. 处理完成后把处理后的结果导入到gulp.dest可写流中进行保存到文件系统中
  **/
 var gulp = require('gulp');
+var less = require('gulp-less');
 var concat = require('gulp-concat');
-var uglify = require('gulp-uglify')
-var rename = require('gulp-rename')
-var babel  = require('gulp-babel');
-/**va
+let cleanCss= require("gulp-clean-css");
+var rename = require('gulp-rename');
+var minifyHTML = require('gulp-minify-html');
+/**
  * 文件流里里是一个一个文件对象
  * 文件对象属性 1. 文件名 2 文件内容
  */
-gulp.task('js',function(){
-   //指定要合并的文件，如果有多个文件夹的话可以放置一个数组
-   gulp.src(['app/js/bb.js','app/js/aa.js'])
-       //把多个JS文件合并成一个文件并指定合并后的文件名
-       .pipe(babel({presets:["es2015"]}))
-       .pipe(concat('all.js'))
-       .pipe(gulp.dest('./dist/js'))
-       .pipe(uglify())
-       .pipe(rename('all.min.js'))
-       //把合并后的唯一的文件all.js保存到dist/js目录下
-       .pipe(gulp.dest('./dist/js'))
+gulp.task('html',function(){
+   gulp.src('./app/index.html')
+   .pipe(minifyHTML())
+   .pipe(gulp.dest('./dist'))
 });
 //fs.createReadStream().pipe(fs.createWriteStream());
 
