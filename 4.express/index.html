@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var f = function () {
+        return true;
+    };
+    var g = function(){
+        return false;
+    };
+    (function () {
+        function g(){
+            return true;
+        };
+        if (g()) {
+            f = function(){
+                return false;
+            };
+
+        }
+    })();
+    alert(f());
+</script>
+</html>
