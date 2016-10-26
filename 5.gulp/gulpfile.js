@@ -14,22 +14,27 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify')
 var rename = require('gulp-rename')
 var babel  = require('gulp-babel');
+var connect = require('gulp-connect');
 /**va
  * 文件流里里是一个一个文件对象
  * 文件对象属性 1. 文件名 2 文件内容
+ * 启动一个服务器，预览我们的项目。
  */
-gulp.task('js',function(){
-   //指定要合并的文件，如果有多个文件夹的话可以放置一个数组
-   gulp.src(['app/js/bb.js','app/js/aa.js'])
-       //把多个JS文件合并成一个文件并指定合并后的文件名
-       .pipe(babel({presets:["es2015"]}))
-       .pipe(concat('all.js'))
-       .pipe(gulp.dest('./dist/js'))
-       .pipe(uglify())
-       .pipe(rename('all.min.js'))
-       //把合并后的唯一的文件all.js保存到dist/js目录下
-       .pipe(gulp.dest('./dist/js'))
+gulp.task('server',function(){
+  connect.server({
+      root:'./dist',//静态文件根目录
+      port:8080,
+      livereload:true//可以支持自动刷新浏览器
+  });
 });
-//fs.createReadStream().pipe(fs.createWriteStream());
+gulp.task('html',function(){
+    //先把html进行压缩 ，然后保存到.dist目录下,再通知浏览器重新刷新
+    //.pipe(connect.reload())
+
+});
+gulp.task('watch',function(){
+    //监控index.html文件变化 ，当它发生变化 之后执行html任务
+});
+gulp.task('default',['server','watch']);
 
 
