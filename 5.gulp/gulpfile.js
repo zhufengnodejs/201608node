@@ -1,8 +1,9 @@
 const gulp = require('gulp');
-const rev = require('gulp-rev');
+const inject = require('gulp-inject');
 
-gulp.task('default', () =>
-    gulp.src('dist/css/*.css')
-        .pipe(rev())
-        .pipe(gulp.dest('dist'))
-);
+gulp.task('default', function(){
+    var target = gulp.src('./index.html');
+    var sources = gulp.src(['./index.js', './index2.js','./index.css']);
+    return target.pipe(inject(sources))
+        .pipe(gulp.dest('./'));
+});

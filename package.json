@@ -1,0 +1,27 @@
+{
+  "name": "201608node",
+  "version": "1.0.0",
+  "description": "```\r react es6(promise)+babel+gulp+webpack+react\r ```\r ## 周末\r ```\r express+cookie+session+mongodb+博客+聊天室\r ```",
+  "main": "index.js",
+  "dependencies": {
+    "babel-preset-es2015": "^6.16.0",
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "webpack": "^1.13.2"
+  },
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhufengnodejs/201608node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhufengnodejs/201608node/issues"
+  },
+  "homepage": "https://github.com/zhufengnodejs/201608node#readme"
+}
