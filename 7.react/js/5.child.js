@@ -1,9 +1,13 @@
 var Children = React.createClass({
    render(){
        return (
-           <div>
-               {this.props.children}
-           </div>
+           <ul>
+               {
+                   React.Children.map(this.props.children,function(item){
+                       return <li>{item}</li>
+                   })
+               }
+           </ul>
        )
    }
 });
