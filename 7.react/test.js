@@ -21,3 +21,10 @@ class Person{
 }
 var p = new Person();
 p.handleClick();
+
+function say(){
+    return(
+        1
+    )
+}
+console.log(say());
