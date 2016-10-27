@@ -11,12 +11,18 @@ var Focus = React.createClass({
     handleChange(event){
         this.setState({val:event.target.value});
     },
+    handleClick(event){
+        var input = this.refs.myInput;
+        console.log(input);
+        input.focus();
+        input.value = '请输入';
+    },
     render(){
            return (
                <div>
-                   <input type="text" onChange={this.handleChange} value={this.state.val}/>
+                   <input ref="myInput" type="text" onChange={this.handleChange} value={this.state.val}/>
                    <p>{this.state.val}</p>
-                   <button>得到焦点</button>
+                   <button onClick={this.handleClick}>得到焦点</button>
                </div>
            )
     }

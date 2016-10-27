@@ -35,6 +35,11 @@ var Panel = React.createClass({
  * 先定义一个对象。然后有过 mixins:[]的形式混入到别的组件时
  *
  */
+
+/**
+ * 划过头，体和尾和到焦点
+ *
+ */
 var mix = {
     getInitialState(){
         return {className:''};
@@ -50,7 +55,7 @@ var Head = React.createClass({
     mixins:[mix],
     render(){
         return (
-            <div  onMouseOut = {this.handleMouseOut} onMouseOver={this.handleMouseOver} className={"panel-heading "+this.state.className } >
+            <div ref="head"  onMouseOut = {this.handleMouseOut} onMouseOver={this.handleMouseOver} className={"panel-heading "+this.state.className } >
                 {this.props.heading}
             </div>
         )
@@ -60,7 +65,7 @@ var Body = React.createClass({
     mixins:[mix],
     render(){
         return (
-            <div   onMouseOut = {this.handleMouseOut} onMouseOver={this.handleMouseOver} className={"panel-body "+this.state.className }>
+            <div ref="body"  onMouseOut = {this.handleMouseOut} onMouseOver={this.handleMouseOver} className={"panel-body "+this.state.className }>
                 {this.props.body}
             </div>
         )
@@ -70,7 +75,7 @@ var Footer = React.createClass({
     mixins:[mix],
     render(){
         return (
-            <div   onMouseOut = {this.handleMouseOut} onMouseOver={this.handleMouseOver} className={"panel-footer "+this.state.className }>
+            <div ref="footer"  onMouseOut = {this.handleMouseOut} onMouseOver={this.handleMouseOver} className={"panel-footer "+this.state.className }>
                 {this.props.footer}
             </div>
         )
