@@ -5,21 +5,34 @@
  * 4. 因为messages内容改变了，会重新渲染MessageList组件中的消息列表
  */
 var MessageBox = React.createClass({
+    getInitialState(){
+        return {messages:[]}
+    },
+    handleClick(msg){
+        this.state.messages.push(msg);
+        this.setState({messages:this.state.messages});
+    },
+
   // 放置form list   panel panel-default
     render(){
         return <div className="panel panel-default">
-            <MessageForm></MessageForm>
-            <MessageList></MessageList>
+            <MessageForm click={this.handleClick}></MessageForm>
+            <MessageList messages={this.state.messages}></MessageList>
         </div>
     }
 });
 var MessageForm = React.createClass({
+    handleClick(){
+       var value =  this.refs.myInput.value;
+        this.props.click(value);
+        this.refs.myInput.value = '';
+    },
   //放置表单 input form-control button btn btn-primary panel-heading
     render(){
         return (
             <div className="panel-heading">
-                <input type="text" className="form-control"/>
-                <button className="btn btn-primary">发言</button>
+                <input ref="myInput" type="text" className="form-control"/>
+                <button onClick={this.handleClick} className="btn btn-primary">发言</button>
             </div>
         )
     }
@@ -30,7 +43,11 @@ var MessageList = React.createClass({
         return (
             <div className="panel-body">
                 <ul className="list-group">
-                    <li className="list-group-item"></li>
+                    {
+                        this.props.messages.map(function(item){
+                            return  <li className="list-group-item">{item}</li>
+                        })
+                    }
                 </ul>
             </div>
         )
