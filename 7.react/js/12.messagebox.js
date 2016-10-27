@@ -1,3 +1,9 @@
+/**
+ * 1. 在父组件MessageBox组件里定义一个状态对象，{messages:[]}
+ * 2. 把此messages数组传递给MessageList来显示 消息列表
+ * 3. 给MessageForm中的按钮绑定点击事件，当点击按钮的时候，得到input框的内容，然后调用父组件的方法来把此内容添加到messages数组中
+ * 4. 因为messages内容改变了，会重新渲染MessageList组件中的消息列表
+ */
 var MessageBox = React.createClass({
   // 放置form list   panel panel-default
     render(){
