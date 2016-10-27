@@ -7,10 +7,17 @@ var Person = React.createClass({
     getInitialState(){
       return {mood:'开心'};
     },
+    handleClick(){
+        //this.state.mood = '难过';
+        //当调用setState的时候，一方面会改变状态，重新渲染界面
+        this.setState({mood:this.state.mood =='开心'?'难过':'开心'});
+    },
     render(){
+        console.log('render');
         return (
             <div>
                 心情:{this.state.mood}
+                <button onClick={this.handleClick}>变心</button>
             </div>
         )
     }

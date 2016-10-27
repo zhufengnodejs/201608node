@@ -1,3 +1,4 @@
+/*
 var prop1 = {name:'四毛',gender:'女'};
 var prop2 = {name:'三毛'};
 Object.assign = function(target,...sources){
@@ -9,4 +10,14 @@ Object.assign = function(target,...sources){
     return target;
 }
 var props = Object.assign({},prop2,prop1);
-console.log(props);
+console.log(props);*/
+
+
+class Person{
+
+    handleClick(){
+
+    }
+}
+var p = new Person();
+p.handleClick();
