@@ -22,4 +22,6 @@ var Person = React.createClass({
         )
     }
 });
+// prop1 prop2 props
 ReactDOM.render(<Person name="四毛" gender="女"></Person>,document.getElementById('app'));
+
