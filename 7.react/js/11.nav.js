@@ -19,12 +19,9 @@ var Nav = React.createClass({
         )}
 });
 var Li = React.createClass({
-    handlClick(){
-        this.props.click(this.props.num);
-    },
     render(){
         return (
-             <li ref={this.props.num} onClick={this.handlClick}><a href="#">{this.props.num}</a></li>
+             <li ref={this.props.num} onClick={this.props.click.bind(this,this.props.num)}><a href="#">{this.props.num}</a></li>
         )
     }
 });
