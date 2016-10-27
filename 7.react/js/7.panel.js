@@ -37,20 +37,20 @@ var Panel = React.createClass({
  */
 var mix = {
     getInitialState(){
-        return {className:''};
+        return {style:{border:''}};
     },
     handleMouseOver(){
-        this.setState({className:'bd'});
+        this.setState({style:{border:'5px solid green'}});
     },
     handleMouseOut(){
-        this.setState({className:''});
+        this.setState({style:{border:''}});
     }
 }
 var Head = React.createClass({
     mixins:[mix],
     render(){
         return (
-            <div  onMouseOut = {this.handleMouseOut} onMouseOver={this.handleMouseOver} className={"panel-heading "+this.state.className } >
+            <div style={this.state.style} onMouseOut = {this.handleMouseOut} onMouseOver={this.handleMouseOver} className="panel-heading" >
                 {this.props.heading}
             </div>
         )
@@ -60,7 +60,7 @@ var Body = React.createClass({
     mixins:[mix],
     render(){
         return (
-            <div   onMouseOut = {this.handleMouseOut} onMouseOver={this.handleMouseOver} className={"panel-body "+this.state.className }>
+            <div  style={this.state.style} onMouseOut = {this.handleMouseOut} onMouseOver={this.handleMouseOver} className="panel-body">
                 {this.props.body}
             </div>
         )
@@ -70,7 +70,7 @@ var Footer = React.createClass({
     mixins:[mix],
     render(){
         return (
-            <div   onMouseOut = {this.handleMouseOut} onMouseOver={this.handleMouseOver} className={"panel-footer "+this.state.className }>
+            <div  style={this.state.style} onMouseOut = {this.handleMouseOut} onMouseOver={this.handleMouseOver} className="panel-footer">
                 {this.props.footer}
             </div>
         )
