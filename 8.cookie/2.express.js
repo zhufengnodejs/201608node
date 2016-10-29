@@ -17,7 +17,7 @@ app.get('/visit',function(req,res){
     //判断此对象如果存在并且count有值的话
     if(cookie && cookie.count){
         cookie.count++;
-        res.cookie('count',cookie.count);
+        res.cookie('count',cookie.count,{});
         res.send('欢迎你老顾客的第'+cookie.count+'次光临')
     }else {
         res.cookie('count',1);
