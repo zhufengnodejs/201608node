@@ -21,7 +21,7 @@ app.get('/visit',function(req,res){
   var cardNo = req.cookies[CARD_NO];
   if(cardNo){
     var cardObj = SESSIONS[cardNo];
-    if(cardObj){
+    if(cardObj && cardObj.cardTime>=new Date().getTime()){
       cardObj.balance-=10;
       res.send('欢迎'+name+'，你的理发卡还剩'+cardObj.balance+'元');
     }else{
@@ -34,7 +34,7 @@ app.get('/visit',function(req,res){
     //生成一个全世界唯一的卡号
     var cardNo =uuid.v4();
     //在服务器端开辟内存，记录卡号和数据对象的对应关系
-    SESSIONS[cardNo] = {name,balance:100};
+    SESSIONS[cardNo] = {name,balance:100,cardTime:new Date().getTime()+10000};
     //通过cookie把此卡号发给客户端 ，客户端保存到本地
     res.cookie(CARD_NO,cardNo);
     res.send('欢迎'+name+'，送你一张价格100元的理发卡');
