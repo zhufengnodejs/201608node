@@ -24,8 +24,13 @@ app.get('/visit',function(req,res){
     if(cardObj){
       cardObj.balance-=10;
       res.send('欢迎'+name+'，你的理发卡还剩'+cardObj.balance+'元');
+    }else{
+      newCard();
     }
   }else{
+    newCard();
+  }
+  function newCard(){
     //生成一个全世界唯一的卡号
     var cardNo =uuid.v4();
     //在服务器端开辟内存，记录卡号和数据对象的对应关系
