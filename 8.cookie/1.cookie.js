@@ -10,10 +10,11 @@ http.createServer(function(req,res){
         //获取请求头中的cookie字符串
         var cookie = req.headers.cookie;
         //把此cookie字符串转成对象
-        var cookiObj = querystring.parse(cookie,'; ');
+        var cookieObj = querystring.parse(cookie,'; ');
+        //req.cookies = cookieObj;
         res.setHeader('Content-Type','text/plain;charset=utf-8');
-        if(cookie && cookiObj && cookiObj.count){
-            var count = cookiObj.count;// 取得原来的count值
+        if(cookie && cookieObj && cookieObj.count){
+            var count = cookieObj.count;// 取得原来的count值
             count++;//加1
             console.log(count);
             //重新把最新的count值写回到客户端,请客户端重新保存
