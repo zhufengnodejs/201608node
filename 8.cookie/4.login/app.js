@@ -8,7 +8,9 @@ var express = require('express');
 var path = require('path');
 var app = express();
 var cookieParser=require('cookie-parser');
+var bodyParser = require('body-parser');
 app.use(cookieParser());
+app.use(bodyParser.urlencoded({extended:true}));
 //设置模板引擎
 app.set('view engine','html');
 //指定模板存放目录，当res.render的第一个参数写的是此路径下面的子路径
@@ -18,6 +20,7 @@ app.engine('.html',require('ejs').__express);
 //引入模板
 //实现权限控制中间件，判断cookie中有没有用户名，如果有，则跳到用户主页，如果没有则跳到登录页
 //定义中间件函数
+//如果重定向了，那么客户端会重新发请求，走到中间件里
 function checkLogin(req,res,next){
     if(req.path == '/login'){//如果请求的是登录页
         next();///直接继续
@@ -33,15 +36,26 @@ function checkLogin(req,res,next){
             res.redirect('/login');
         }
     }
-
 }
+app.use(checkLogin);
 //登录页
-app.get('/login',function(){
-   res.render('index')
+app.get('/login',function(req,res){
+   res.render('login')
+});
+app.post('/login',function(req,res){
+    var user = req.body;//得到请求体
+    if(user.username == user.password){//如果在表单中输入的用户名和密码相同，则登录成功
+        //把用户名写入cookie
+      res.cookie('username',user.username);
+        //重定向到user页面
+      res.redirect('/user');
+    }else{
+        res.redirect('back');
+    }
 });
 //用户主页
-app.get('/user',function(){
-   res.render('user')
+app.get('/user',function(req,res){
+   res.render('user',{username:req.cookies.username})
 });
 
 
