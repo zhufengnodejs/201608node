@@ -28,7 +28,27 @@ User.create(userObj,function(err,doc){
     }
 });
 
+/**
+ * 切换到指定的数据库
+ * > use 201608db
+     switched to db 201608db
 
+   查看当前是哪个数据库
+ > db
+   201608db
+   查看帮助，了解数据库有哪些方法
+    db.help();
+   查看当前数据库下面的有哪些集合
+ >  db.getCollectionNames();
+ [ "person", "system.indexes" ]
+ > show collections;
+    person
+   system.indexes
+
+ 如何 查看集合中的文档
+  db.集合名称.find();
+  db.person.find();
+ */
 
 
 

@@ -12,6 +12,7 @@ app.use(session({
     secret:'zfpx',//加密cookie
     //cookie:{maxAge:10*1000}
 }));
+
 app.get('/set',function(req,res){
     //给session赋值
     req.session.username = req.query.username;
