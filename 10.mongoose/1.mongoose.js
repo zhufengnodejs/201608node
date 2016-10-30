@@ -81,6 +81,7 @@ User.find({name:'张三4'}).then(function(docs){
     console.log(doc);
 });*/
 //默认情况下，remove会删除掉所有匹配的记录
+/*
 User.remove({name:'张三'},function(err,result){
     console.log(result.result);
-});
+});*/
