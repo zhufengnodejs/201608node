@@ -16,5 +16,5 @@ var User = {
 var pageNum = 2;
 var pageSize = 3;
 User.skip(pageSize * (pageNum - 1)).limit(pageSize).sort({age: 1}).exec(function (docs) {
-    console.log(docs);
+    console.log(docs);// 4 5 6
 });
