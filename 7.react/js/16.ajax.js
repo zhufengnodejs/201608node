@@ -11,9 +11,9 @@ var Suggest = React.createClass({
        var word = event.target.value;
        //https://www.baidu.com/su?wd=b&cb=fun
         //https://www.baidu.com/su?cb=jQuery_1478056916822&wd=b&_=1478056916824
-        //jQuery111109257844484509952_1478056916822({q:"b",p:false,s:["baidu","bt","btchina","beyond","bbs","bbc","blog","bobo组合","bb霜"]});
+        //jQuery111109257844484509952_1478056916822({q:"b",p:false,s:["b1","b2","b3","b4","b5"]});
        ajax({
-           url:'https://www.baidu.com/su',
+           url:'http://localhost:3000/su',
            method:'GET',
            data:{wd:word},//转成查询字符串并拼在URL的后面
            dataType:'jsonp', //指定响应的类型
@@ -66,7 +66,6 @@ ReactDOM.render(<Suggest></Suggest>,document.getElementById('app'));
 function ajax({url,method='GET',data,dataType,jsonp,context,success}){
    // ?cb=jQuery_1478056916822&wd=b&_=1478056916824
    var callbackName = `jQuery_${Date.now()}`;
-
    url = addSearch(url,`${jsonp}=${callbackName}`);
     //-> https://www.baidu.com/su?cb=jQuery_1478056916822
    url = addSearch(url,toStr(data));
@@ -74,13 +73,15 @@ function ajax({url,method='GET',data,dataType,jsonp,context,success}){
    var script = document.createElement('script');
    script.src = url;
    document.body.appendChild(script);
+    //因为数据响应回来的时候要调用callbackname,所以需要给 window这样的属性
    window[callbackName] = function(data){
+       //让成功的回调this对象指 context 对象
        success.call(context,data);
+       //删除window上的临时方法
        delete window[callbackName];
+       //从父节点移除此子节点
        script.parentNode.removeChild(script);
    }
-
-
 }
 //{name:'zfpx',age:9} -> name=zfpx&age=9
 function toStr(data){
