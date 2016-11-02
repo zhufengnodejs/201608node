@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "dev":"webpack-dev-server"
+    "dev":"webpack-dev-server",
+    "build-react": "webpack --config webpack.react.js",
+    "dev-react":"webpack-dev-server --config webpack.react.js"
   },
   "keywords": [],
   "author": "",

@@ -6,7 +6,7 @@ export default class Panel extends React.Component{
       return (
           <div className="panel panel-danger">
               <PanelHead content={this.props.head}></PanelHead>
-              <PanelBody conent={this.props.body}></PanelBody>
+              <PanelBody content={this.props.body}></PanelBody>
           </div>
       )
     }
