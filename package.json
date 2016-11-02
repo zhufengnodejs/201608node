@@ -9,6 +9,8 @@
     "body-parser": "^1.15.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
+    "html-webpack-plugin": "^2.24.1",
+    "open-browser-webpack-plugin": "0.0.3",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
