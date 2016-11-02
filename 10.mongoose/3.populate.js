@@ -16,7 +16,8 @@ var articleSchema = new mongoose.Schema({
     //定义user的类型和引用的模型的名称
     user:{type:ObjectId,ref:'User'} //外键
 },{collection:'article'});
-var Article = mongoose.model('Article',articleSchema);
+ mongoose.model('Article',articleSchema);
+mongoose.model('Article')
 //先保存用户，然后保存一篇文章
 //User.create({name:'zfpx',age:9})
 //.then(function(doc){
