@@ -7,7 +7,9 @@
     "build": "webpack",
     "dev": "webpack-dev-server",
     "build-react": "webpack --config webpack.react.js",
-    "dev-react": "webpack-dev-server --config webpack.react.js"
+    "dev-react": "webpack-dev-server --config webpack.react.js",
+    "build-message": "webpack --config webpack.message.js",
+    "dev-message": "webpack-dev-server --config webpack.message.js"
   },
   "keywords": [],
   "author": "",

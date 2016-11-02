@@ -34,8 +34,8 @@ curl -v -X DELETE --data "id=1" http://localhost:8080/users
 ## 今天内容
 1. react的生命周期
 2. react如何跟jquery交互
-
 3. 如何调用远程接口
 4. webpack打包react
 5. 如何用es6编写react组件
+
 6. 做一个珠峰留言版的案例
