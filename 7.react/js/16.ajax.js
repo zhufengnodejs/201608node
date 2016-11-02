@@ -13,14 +13,17 @@ var Suggest = React.createClass({
         //https://www.baidu.com/su?cb=jQuery_1478056916822&wd=b&_=1478056916824
         //jQuery111109257844484509952_1478056916822({q:"b",p:false,s:["b1","b2","b3","b4","b5"]});
        ajax({
-           url:'http://localhost:3000/su',
+           url:'http://127.0.0.1:9090/su',
            method:'GET',
            data:{wd:word},//转成查询字符串并拼在URL的后面
            dataType:'jsonp', //指定响应的类型
            jsonp:'cb',//指定向服务器端传入的回调函数名的参数名
            context:this,//指定 success中的this对象 指向当前组件的实例
            success:function(data){
+               console.log(data);
                this.setState({words:data.s});
+           },error:function(result){
+               console.log(result);
            }
        })
           /* done指定成功的回调
@@ -76,7 +79,7 @@ function ajax({url,method='GET',data,dataType,jsonp,context,success}){
     //因为数据响应回来的时候要调用callbackname,所以需要给 window这样的属性
    window[callbackName] = function(data){
        //让成功的回调this对象指 context 对象
-       success.call(context,data);
+       success.call(context,JSON.parse(data));
        //删除window上的临时方法
        delete window[callbackName];
        //从父节点移除此子节点
