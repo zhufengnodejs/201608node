@@ -10,6 +10,6 @@ app.get('/su',function(req,res){
  }
  var result = {q:wd,p:false,s:words};
  //jQuery111109257844484509952_1478056916822()
- res.send(`${cb}('${JSON.stringify(result)}')`);
+ res.send(`${cb}(${JSON.stringify(result)})`);
 });
 app.listen(9090);

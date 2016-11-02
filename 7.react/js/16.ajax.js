@@ -21,6 +21,7 @@ var Suggest = React.createClass({
            context:this,//指定 success中的this对象 指向当前组件的实例
            success:function(data){
                console.log(data);
+               data = JSON.parse(data);
                this.setState({words:data.s});
            },error:function(result){
                console.log(result);
