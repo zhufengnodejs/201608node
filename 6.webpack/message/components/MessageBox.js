@@ -1,6 +1,11 @@
 import React from 'react';
 import MessageList from './MessageList.js';
 import MessageForm from './MessageForm.js';
+/**
+ * 1.添加删除按钮
+ * 2.绑定点击事件，当点击按钮的时候调用model.remove方法，把ID传过来进行删除
+ * 3.删除成功后修改MessageBox的状态对象的messages属性
+ */
 export default class MessageBox extends React.Component{
   constructor(props){
       //调用父类的构造函数来初始化组建
