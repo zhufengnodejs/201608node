@@ -8,6 +8,11 @@ export default class MessageBox extends React.Component{
      this.state = {messages:[{author:'张三',date:'2016年11月3日10:57:06',content:'今天天气不错，雾霾当道'},{author:'李四',date:'2016年11月3日10:57:06',content:'我买了口罩了'}]};
   }
 
+  addMessage(msgObj){
+     this.state.messages.push(msgObj);
+     this.setState({messages:this.state.messages});
+  }
+
   render(){
       return (
           <div className="panel panel-default">
@@ -18,7 +23,7 @@ export default class MessageBox extends React.Component{
                   <MessageList messages={this.state.messages}></MessageList>
               </div>
               <div className="panel-footer">
-                  <MessageForm></MessageForm>
+                  <MessageForm addMessage={this.addMessage.bind(this)}></MessageForm>
               </div>
           </div>
       )
