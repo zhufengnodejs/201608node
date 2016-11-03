@@ -5,12 +5,16 @@ export default class MessageBox extends React.Component{
   constructor(props){
       //调用父类的构造函数来初始化组建
      super(props);
-     this.state = {messages:[{author:'张三',date:'2016年11月3日10:57:06',content:'今天天气不错，雾霾当道'},{author:'李四',date:'2016年11月3日10:57:06',content:'我买了口罩了'}]};
+     this.state = {messages:[]};
+  }
+    //做渲染前数据准备工作
+  componentWillMount(){
+     this.setState({messages:this.props.model.list()});
   }
 
   addMessage(msgObj){
-     this.state.messages.push(msgObj);
-     this.setState({messages:this.state.messages});
+     var messages = this.props.model.add(msgObj);
+     this.setState({messages});
   }
 
   render(){

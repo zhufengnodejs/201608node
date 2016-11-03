@@ -1,7 +1,6 @@
-var s = [];
-try{
-    s = JSON.parse('{"id":1}');
-}catch(e){
-    s = []
+'use strict';
+function say(){
+    console.log(this);
 }
-console.log(s);
+
+say();
