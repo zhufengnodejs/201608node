@@ -18,6 +18,13 @@ module.exports = {
                 test:/\.js$/,
                 loader:'babel'
             }
+            ,{
+                test:/\.css$/,
+                loader:'style!css'
+            },{
+                test:/\.(svg|eot|ttf|woff|woff2)/,
+                loader:'url?limit=2048'
+            }
         ]
     },
     plugins:[
