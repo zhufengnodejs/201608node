@@ -6,35 +6,40 @@ import MessageForm from './MessageForm.js';
  * 2.绑定点击事件，当点击按钮的时候调用model.remove方法，把ID传过来进行删除
  * 3.删除成功后修改MessageBox的状态对象的messages属性
  */
-export default class MessageBox extends React.Component{
-  constructor(props){
-      //调用父类的构造函数来初始化组建
-     super(props);
-     this.state = {messages:[]};
-  }
+export default class MessageBox extends React.Component {
+    constructor(props) {
+        //调用父类的构造函数来初始化组建
+        super(props);
+        this.state = {messages: []};
+    }
+
     //做渲染前数据准备工作
-  componentWillMount(){
-     this.setState({messages:this.props.model.list()});
-  }
+    componentWillMount() {
+        this.props.model.list((messages) =>{
+            this.setState({messages});
+        });
 
-  addMessage(msgObj){
-     var messages = this.props.model.add(msgObj);
-     this.setState({messages});
-  }
+    }
 
-  render(){
-      return (
-          <div className="panel panel-default">
-              <div className="panel-heading text-center">
-                  <h3>珠峰留言版</h3>
-              </div>
-              <div className="panel-body">
-                  <MessageList messages={this.state.messages}></MessageList>
-              </div>
-              <div className="panel-footer">
-                  <MessageForm addMessage={this.addMessage.bind(this)}></MessageForm>
-              </div>
-          </div>
-      )
-  }
+    addMessage(msgObj) {
+        this.props.model.add(msgObj,(messages)=>{
+            this.setState({messages});
+        });
+    }
+
+    render() {
+        return (
+            <div className="panel panel-default">
+                <div className="panel-heading text-center">
+                    <h3>珠峰留言版</h3>
+                </div>
+                <div className="panel-body">
+                    <MessageList messages={this.state.messages}></MessageList>
+                </div>
+                <div className="panel-footer">
+                    <MessageForm addMessage={this.addMessage.bind(this)}></MessageForm>
+                </div>
+            </div>
+        )
+    }
 }

@@ -1,10 +1,16 @@
 var express = require('express');
+//解析请求体
 var bodyParser = require('body-parser');
+//得到Message模型
 var Message = require('./db').Message;
 var app = express();
+//使用bodyParser中间件解析出请求挂载到req.body上
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-
+app.use(function(req,res,next){
+    res.setHeader('Access-Control-Allow-Origin','*');
+    next();
+});
 //获取所有的消息
 //curl http://127.0.0.1:3000/messages
 app.get('/messages',function(req,res){
