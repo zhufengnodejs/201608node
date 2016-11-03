@@ -7,6 +7,11 @@ module.exports = {
         path:'./build',
         filename:'bundle.js'
     },
+    //指定静态文件根目录
+    devServer:{
+      inline:true,
+      contentBase:'./build'
+    },
     module:{
         loaders:[
             {
