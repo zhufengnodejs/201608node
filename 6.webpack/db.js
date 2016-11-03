@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 //连接本地数据库
-mongoose.connect('mongodb://localhost/message');
+mongoose.connect('mongodb://127.0.0.1/message');
 
 //定义schema 数据库集合的骨架模型
 var MessageSchema = new mongoose.Schema({
