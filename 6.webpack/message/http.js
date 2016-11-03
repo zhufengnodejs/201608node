@@ -19,6 +19,7 @@ export default  {
     },
     //得到消息数组对象
     list(callback){
+        //所有的接口都会返回最新的消息数组，所以可以用此数组状态
         $.get('http://127.0.0.1:3000/messages').then(function(messages){
             callback(messages);
         },function(error){

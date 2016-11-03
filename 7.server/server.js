@@ -8,8 +8,16 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(function(req,res,next){
+    //允许所有的来源来访问本服务
     res.setHeader('Access-Control-Allow-Origin','*');
-    next();
+    //服务器在跨域的时候支持请求的方法
+    res.setHeader('Access-Control-Allow-Methods',"GET,POST,DELETE,PUT");
+    //如果发的options请求，是为了预请求检查，是为了得到上述的响应头，不需要响应体
+    if(req.method == 'OPTIONS'){
+        res.end();
+    }else{
+        next();
+    }
 });
 //获取所有的消息
 //curl http://127.0.0.1:3000/messages

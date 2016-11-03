@@ -26,7 +26,11 @@ export default class MessageBox extends React.Component {
             this.setState({messages});
         });
     }
-
+    remove(id){
+        this.props.model.remove(id,(messages)=>{
+            this.setState({messages});
+        });
+    }
     render() {
         return (
             <div className="panel panel-default">
@@ -34,7 +38,7 @@ export default class MessageBox extends React.Component {
                     <h3>珠峰留言版</h3>
                 </div>
                 <div className="panel-body">
-                    <MessageList messages={this.state.messages}></MessageList>
+                    <MessageList click={this.remove.bind(this)} messages={this.state.messages}></MessageList>
                 </div>
                 <div className="panel-footer">
                     <MessageForm addMessage={this.addMessage.bind(this)}></MessageForm>
