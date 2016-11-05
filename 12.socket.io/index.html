@@ -3,19 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
 </head>
 <body>
+<div class="panel panel-default">
+    <div class="panel-heading"></div>
+    <div class="panel-body">
+        <ul class="list-group">
 
+        </ul>
+    </div>
+    <div class="panel-footer">
+        <input type="text" class="form-control">
+        <button class="btn btn-primary">发言</button>
+    </div>
+</div>
 <script src="/socket.io/socket.io.js"></script>
 <script>
-    //io.connect('/');
     var socket = io.connect('ws://localhost:8080/');
     socket.on('connect',function(){
         console.log('连接成功');
     });
-    socket.on('disconnect',function(){
-        console.log('断开连接');
+
+    //客户端监听服务器端的事件，当事件发生的时候执行回调函数
+    socket.on('message',function(msg){
+        console.log(msg);
     });
+    /**
+     * 1. 给发言按钮绑定onclick事件,当事件发生的时候先取到文本框的内容发送给服务器
+     * 2. 服务器收到消息后把此消息通知广播给所有的客户端
+     * 3. 客户端收到消息后要把此消息添加到消息列表里
+     */
 </script>
 </body>
 </html>
