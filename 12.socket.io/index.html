@@ -32,6 +32,10 @@
     var socket = io.connect(`ws://${location.hostname}:${location.port}/`);
     socket.on('connect',function(){
         console.log('连接成功');
+        var room = location.hash;
+        if(room.startsWith('#')){
+             socket.emit('join',room.slice(1));
+        }
     });
 
     socket.on('messages',function(messages){
