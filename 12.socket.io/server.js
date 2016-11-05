@@ -25,14 +25,23 @@ var sockets = {};
 io.on('connection',function(socket){
     var username;//此客户端的用户名
     var currentRoom;
-    //每当客户端连接上来的时候，向客户端发送一个消息
-    socket.emit('messages',messages);
     socket.send({username:'系统',content:'请输入呢称!',createAt:new Date()});
    //socket.emit('message','欢迎你客户端');
     //在服务器接收到join事件之后，服务器端对应socket进入某个房间内
     socket.on('join',function(room){
-        currentRoom = room;
-        socket.join(room);
+        if(room){
+            currentRoom = room;
+            socket.join(room);
+            //每当客户端连接上来的时候，向客户端发送一个消息
+            socket.emit('messages',messages.filter(function(message){
+                return message.room == currentRoom;
+            }));
+        }else{
+            socket.emit('messages',messages.filter(function(message){
+                return !message.room;
+            }));
+        }
+
     });
    //监听客户端发过来的消息
    socket.on('message',function(msg){
@@ -52,7 +61,7 @@ io.on('connection',function(socket){
                 }
 
            }else{
-               messages.push({username,content:msg,createAt:new Date()});
+               messages.push({room:currentRoom,username,content:msg,createAt:new Date()});
                //向连接到此服务器上的所有的客户端发送消息
                 if(currentRoom){
                     io.in(currentRoom).emit('message',{username,content:msg,createAt:new Date()});

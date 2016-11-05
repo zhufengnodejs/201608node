@@ -35,6 +35,8 @@
         var room = location.hash;
         if(room.startsWith('#')){
              socket.emit('join',room.slice(1));
+        }else{
+            socket.emit('join','');
         }
     });
 
