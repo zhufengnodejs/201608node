@@ -5,17 +5,19 @@
     <title>Title</title>
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
 </head>
-<body>
-<div class="panel panel-default">
-    <div class="panel-heading"></div>
-    <div class="panel-body">
-        <ul class="list-group">
+<body style="margin-top: 30px">
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading"></div>
+        <div class="panel-body">
+            <ul class="list-group">
 
-        </ul>
-    </div>
-    <div class="panel-footer">
-        <input type="text" class="form-control">
-        <button class="btn btn-primary">发言</button>
+            </ul>
+        </div>
+        <div class="panel-footer">
+            <input id="txtMsg" type="text" class="form-control">
+            <button onclick="send()" class="btn btn-primary">发言</button>
+        </div>
     </div>
 </div>
 <script src="/socket.io/socket.io.js"></script>
@@ -25,15 +27,30 @@
         console.log('连接成功');
     });
 
+    socket.on('messages',function(messages){
+        document.querySelector('.list-group').innerHTML = messages.map(function(message){
+            return `<li class="list-group-item">${message}</li>`;
+        }).join('');
+    });
+
     //客户端监听服务器端的事件，当事件发生的时候执行回调函数
     socket.on('message',function(msg){
-        console.log(msg);
+        var li = document.createElement('li');
+        li.innerHTML = msg;
+        li.className = 'list-group-item';
+        document.querySelector('.list-group').appendChild(li);
     });
     /**
      * 1. 给发言按钮绑定onclick事件,当事件发生的时候先取到文本框的内容发送给服务器
      * 2. 服务器收到消息后把此消息通知广播给所有的客户端
      * 3. 客户端收到消息后要把此消息添加到消息列表里
      */
+    function send(){
+        var txtMsg = document.querySelector('#txtMsg');
+        //向服务器发消息
+        socket.send(txtMsg.value);
+        txtMsg.value = '';
+    }
 </script>
 </body>
 </html>

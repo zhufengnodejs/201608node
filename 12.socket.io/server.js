@@ -16,13 +16,17 @@ app.get('/socket.io/socket.io.jss',function(req,res){
 var server = require('http').createServer(app);
 //io = websocket 服务器端实例
 var io = require('socket.io')(server);
+//存放服务器的所有的消息
+var messages = [];
 //监听客户端的请求，请求到达服务器的时候执行回调函数，并传递为此连接创建socket对象
 io.on('connection',function(socket){
-   socket.send('欢迎你客户端');
+    socket.emit('messages',messages);
    //socket.emit('message','欢迎你客户端');
    //监听客户端发过来的消息
    socket.on('message',function(msg){
-     log(msg);
+       messages.push(msg);
+       //向连接到此服务器上的所有的客户端发送消息
+       io.emit('message',msg);
    });
 });
 server.listen(8080);
