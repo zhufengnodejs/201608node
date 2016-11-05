@@ -13,7 +13,8 @@
     "mongoose": "^4.6.5",
     "open-browser-webpack-plugin": "0.0.3",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react-dom": "^15.3.2",
+    "ws": "^1.1.1"
   },
   "devDependencies": {
     "webpack": "^1.13.2"
