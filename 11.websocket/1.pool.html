@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="clock">
+
+</div>
+<script>
+    setInterval(function(){
+       var xhr = new XMLHttpRequest;
+       xhr.open('GET','http://127.0.0.1:9090/clock',true);
+       //xhr.responseType = 'text';// json  text
+       xhr.onreadystatechange = function(){
+          if(xhr.readyState == 4 && /2\d{2}/.test(xhr.status)){
+             document.getElementById('clock').innerHTML = xhr.responseText;
+          }
+       }
+       xhr.send();
+    },1000);
+</script>
+</body>
+</html>
