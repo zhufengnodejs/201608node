@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="/bootstrap.min.css">
+    <style>
+        .username{
+            color:blue;
+            cursor: pointer;
+        }
+    </style>
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body style="margin-top: 30px">
 <div class="container">
@@ -29,17 +36,16 @@
 
     socket.on('messages',function(messages){
         document.querySelector('.list-group').innerHTML = messages.map(function(message){
-            return `<li class="list-group-item">${message.username}:${message.content} <span class=" pull-right">${message.createAt}</span></li>`;
+            return `<li class="list-group-item"><span class="username">${message.username}</span>:${message.content} <span class=" pull-right">${message.createAt}</span></li>`;
         }).join('');
     });
 
     //客户端监听服务器端的事件，当事件发生的时候执行回调函数
     socket.on('message',function(msgObj){ //username content createAt
         var li = document.createElement('li');
-        li.innerHTML = `${msgObj.username}:${msgObj.content} <span class=" pull-right">${msgObj.createAt}</span>`;
+        li.innerHTML = `<span class="username">${msgObj.username}</span>:${msgObj.content} <span class=" pull-right">${msgObj.createAt}</span>`;
         li.className = 'list-group-item';
         document.querySelector('.list-group').appendChild(li);
-        console.log(document.querySelector('.list-group').innerHTML);
     });
     /**
      * 1. 给发言按钮绑定onclick事件,当事件发生的时候先取到文本框的内容发送给服务器
@@ -57,6 +63,14 @@
         console.log(username);
         socket.send(username);
     }*/
+   /* $('.list-group').click(function(){
+        console.log($(this).html());
+    })*/
+     //用事件委托可以处理未来增加的li里的用户名
+    $('.list-group').delegate('.username','click',function(){
+        var txtMsg = document.querySelector('#txtMsg');
+        txtMsg.value = `@${$(this).html()} `;
+    })
 </script>
 </body>
 </html>

@@ -19,6 +19,8 @@ var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 //存放服务器的所有的消息
 var messages = [];
+//存放着用户名和socket对象的对应关系
+var sockets = {};
 //监听客户端的请求，请求到达服务器的时候执行回调函数，并传递为此连接创建socket对象
 io.on('connection',function(socket){
     var username;//此客户端的用户名
@@ -30,12 +32,34 @@ io.on('connection',function(socket){
    socket.on('message',function(msg){
        //如果用户已经设置过了，表示正常的发言
        if(username){
-           messages.push({username,content:msg,createAt:new Date()});
-           //向连接到此服务器上的所有的客户端发送消息
-           io.emit('message',{username,content:msg,createAt:new Date()});
+           // @张三 12345
+           var regex = /@(.+?)\s(.+)/;
+           var result = msg.match(regex);
+           if(result){
+                var toUser = result[1];//想跟谁私聊说话
+                var content = result[2];//说话的内容
+                var toSocket = sockets[toUser];
+                if(toSocket){
+                    toSocket.send({username,content,createAt:new Date()});
+                }else{
+                    socket.send({username:'系统',content:`${toUser}用户不存在!`,createAt:new Date()});
+                }
+
+           }else{
+               messages.push({username,content:msg,createAt:new Date()});
+               //向连接到此服务器上的所有的客户端发送消息
+               io.emit('message',{username,content:msg,createAt:new Date()});
+           }
        }else{
-           username = msg;
-           io.emit('message',{username:'系统',content:`欢迎${username}加入聊天室`,createAt:new Date()});
+           //判断此用户是否已经有人用过了，用过的话会提示呢称已经被占用，请重新输入
+           if(sockets[msg]){
+               socket.send({username:'系统',content:`${msg}已经被占用，请你换个别的名字吧!`,createAt:new Date()});
+           }else{
+               username = msg;
+               //把此用户名和此socket的关系存起来
+               sockets[username] = socket;
+               io.emit('message',{username:'系统',content:`欢迎${username}加入聊天室`,createAt:new Date()});
+           }
        }
 
    });
