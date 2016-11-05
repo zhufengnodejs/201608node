@@ -6,6 +6,13 @@ app.get('/',function(req,res){
     //resolve是得到一个文件的绝对路径
     res.sendFile(path.resolve('index.html'));
 });
+//node_modules/socket.io-client/socket.io.js
+/*
+app.get('/socket.io/socket.io.jss',function(req,res){
+  res.sendFile(path.resolve('../node_modules/socket.io-client/socket.io.js'),{root:__dirname});
+});
+*/
+
 var server = require('http').createServer(app);
 //io = websocket 服务器端实例
 var io = require('socket.io')(server);
