@@ -22,8 +22,9 @@ exports.category = function(url,callback){
               var $this = $(this);//把原生的DOM对象转成jquery对象
               var href = $this.attr('href');//取出href属性
               var result = href.match(/buzz\?b=(\d+)/);//匹配正则提取id
+              var id = parseInt(result[1]);
               var item = {
-                  id:parseInt(result[1]),//返回值的第二个元素就是第一个分组，也就是想找的ID
+                  id:id,//返回值的第二个元素就是第一个分组，也就是想找的ID
                   name:$this.text(),//名称
                   url:`http://top.baidu.com/buzz?b=${id}&c=1&fr=topcategory_c1`//此URL地址用来进行下一步请求
               }
