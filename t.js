@@ -1,6 +1,4 @@
-var str =  '@1 i love 1';
-var regex = /@(.+?)\s(.+)/;
-//var regex = /@([^\s]+)\s(.+)/;
-console.log(regex.test(str));
-//console.log(regex.exec(str))
-console.log(str.match(regex));
+var a = [1,2,3];
+var b = [4,5,6];
+a = [...a,...b];
+console.log(a);

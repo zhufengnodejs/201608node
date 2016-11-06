@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电影风云榜</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+</head>
+<body style="margin-top: 30px">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="list-group">
+                <%
+                   movies.forEach(function(movie){%>
+                       <li class="list-group-item"><%=movie.name%></li>
+                <%});
+                %>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="list-group">
+                <%
+                categories.forEach(function(category){%>
+                <li class="list-group-item">
+                    <a href="/?cid=<%=category.id%>"><%=category.name%></a>
+                </li>
+                <%});
+                %>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
