@@ -57,9 +57,10 @@ exports.movie = function(url,cid,callback){
   })
 }
 
+/*
 exports.category('http://top.baidu.com/category?c=1&fr=topindex',function(err,items){
         console.log(items);
 });
 exports.movie('http://top.baidu.com/buzz?b=340&c=1&fr=topcategory_c1',340,function(err,items){
     console.log(items);
-});
+});*/
