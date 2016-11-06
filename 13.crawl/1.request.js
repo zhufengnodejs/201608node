@@ -9,6 +9,7 @@ var iconv = require('iconv-lite');
  */
 request({url:'http://top.baidu.com/category?c=1&fr=topindex',encoding:null},function(err,response,body){
     if(!err && response.statusCode == 200){
+        //console.log(response.headers);
         //1参数是要转字符串的buffer,第二个参数是此buffer的编写
         // utf8
         body = iconv.decode(body,'gbk');
