@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>电影榜单首页--百度搜索风云榜</title>
+
+    <base href="http://top.baidu.com/" />
+    <style>
+        .icon-xiang-imp {background:url(http://top.bdimg.com/frontend/static/common/images/xiang.png) center center no-repeat !important;}
+    </style>
+    <script>
+        var href_ps_tn = 'SE_baiduhomet8_jmjb7mjw';
+        var href_ps_prep = 'http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=';
+        var boardIdsLikeYeYou = ',173,1393,1394,';
+        function checkLikeYeYou(boardId) {
+            if (boardId && boardIdsLikeYeYou.indexOf(',' + boardId + ',') >= 0) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+
+
+        var baidu;
+    </script>
+    <script>var BASE_URL = "http://top.baidu.com/", BASEURL = "http://top.bdimg.com/frontend", FLASH_URL= "http://top.baidu.com/frontend";</script>
+    <link rel="stylesheet" href="http://top.bdimg.com/frontend/static/common/common.min.css" />
+    <script type="text/javascript" src="http://top.bdimg.com/frontend/build/common/lib.js?v=150709"></script>
+    <script>var bt = baidu.template;</script>
+
+    <link rel="stylesheet" href="http://top.bdimg.com/frontend/static/category/category.min.css?v=150709" />
+
+
+</head>
+<body class="category_1 ">
+<div class="wrapper">
+    <div class="header">
+        <div class="lg">
+            <a href="./?vit=1"><img src="http://top.bdimg.com/frontend/static/common/logo.png" alt="搜索风云榜" title="搜索风云榜" /></a>
+        </div>
+        <div id="ba_sc">
+            <p id="ba_nv"> <a target="_blank" name="tj_news" href="http://news.baidu.com/">新闻</a>　<a target="_blank" name="tj_ps" href="http://www.baidu.com/">网页</a>　<strong class="bold">风云榜</strong>　<a target="_blank" name="tj_tieba" href="http://tieba.baidu.com/">贴吧</a>　 <a target="_blank" name="tj_zhidao" href="http://zhidao.baidu.com/">知道</a>　 <a target="_blank" name="tj_music" href="http://music.baidu.com/">音乐</a>　 <a target="_blank" name="tj_img" href="http://image.baidu.com/">图片</a>　 <a target="_blank" name="tj_video" href="http://video.baidu.com/">视频</a>　 <a target="_blank" name="tj_map" href="http://map.baidu.com/">地图</a>　 <a target="_blank" name="tj_index" href="http://index.baidu.com/">指数</a> </p>
+            <form id="ba_fm" action="http://www.baidu.com/s" name="f" target="_blank">
+                <input name="tn" value="SE_baiduhomet8_jmjb7mjw" type="hidden" />
+            <span class="s_ipt_wr">
+                <input value="" data-default="无障碍网约车上线" maxlength="100" class="s_ipt" name="wd" id="sword">
+            </span>
+            <span class="s_btn_wr">
+                <input type="submit" id="ba_baidu" class="s_btn" onmousedown="this.className='s_btn s_btn_h'" onmouseout="this.className='s_btn'" value="百度一下">
+            </span>
+            </form>
+        </div>
+        <p class="ba_hp">
+            <a href="./help" id="ba_link_help">帮助</a> | <a id="feedback_bd" href="javascript:;">反馈</a> | <a class="fred" target="_blank" href="./add">定制榜单</a>
+        </p>
+
+    </div>
+
+    <div id="nav" class="nav has-sub-nav"><ul id="main-nav"><li> <a href="./?vit=1">首页</a> </li><li> <a href="./news">风云时讯</a> </li><li class="current"><a href="category?c=1">娱乐<span>&nbsp;</span></a></li><li><a href="./category?c=9">人物</a><ul class="sub-nav"><li><a href="./buzz?b=258">热点人物</a></li><li><a href="./buzz?b=618">娱乐名人</a></li><li><a href="./buzz?b=18">女演员</a></li><li><a href="./buzz?b=17">男演员</a></li><li><a href="./buzz?b=16">女歌手</a></li><li><a href="./buzz?b=15">男歌手</a></li><li><a href="./buzz?b=454">主持人</a></li><li><a href="./buzz?b=255">体坛人物</a></li><li><a href="./buzz?b=3">美女</a></li><li><a href="./buzz?b=22">帅哥</a></li></ul></li><li><a href="./category?c=10">小说</a><ul class="sub-nav"><li><a href="./buzz?b=7">全部</a></li><li><a href="./buzz?b=353">玄幻奇幻</a></li><li><a href="./buzz?b=355">都市言情</a></li><li><a href="./buzz?b=354">武侠仙侠</a></li><li><a href="./buzz?b=1508">青春校园</a></li><li><a href="./buzz?b=1509">穿越架空</a></li><li><a href="./buzz?b=356">惊悚悬疑</a></li><li><a href="./buzz?b=459">历史军事</a></li><li><a href="./buzz?b=1512">游戏竞技</a></li><li><a href="./buzz?b=1510">耽美同人</a></li><li><a href="./buzz?b=1513">文学经典</a></li></ul></li><li><a href="./category?c=513">热点</a><ul class="sub-nav"><li><a href="./buzz?b=1">实时热点</a></li><li><a href="./buzz?b=341">今日热点</a></li><li><a href="./buzz?b=42">七日热点</a></li><li><a href="./buzz?b=342">民生热点</a></li><li><a href="./buzz?b=344">娱乐热点</a></li><li><a href="./buzz?b=11">体育热点</a></li></ul></li><li><a href="./buzz?b=1564">汽车</a></li><li><a href="./buzz?b=1566">手机</a></li><li> <a href="./boards">全部榜单</a> </li><li> <a href="./region">地域风向标</a> </li><li class="last"> <a href="./population">人群风向标</a> </li></ul><ul id="sub-nav"><li  class="active"><a href="./category?c=1">电影<span>&nbsp;</span></a></li><li ><a href="./category?c=2">电视剧<span>&nbsp;</span></a></li><li ><a href="./category?c=3">综艺<span>&nbsp;</span></a></li><li ><a href="./category?c=33">音乐<span>&nbsp;</span></a></li><li ><a href="./category?c=5">动漫<span>&nbsp;</span></a></li></ul></div>
+
+
+    <div id="main" class="main">
+        <div id="flist" class="w_139">
+
+
+
+            <div class="hblock">
+                <ul>
+                    <li><a class="bb se" title="电影榜单首页" href="javascript:void(0)">电影榜单首页</a></li>
+
+                    <li><a class="odd"  title="全部电影" href="
+    	    	        ./buzz?b=26&c=1
+            ">全部电影</a></li>
+                    <li><a   title="热映电影" href="
+    	    	        ./buzz?b=661&c=1
+            ">热映电影</a></li>
+                    <li><a class="odd"  title="即将上映" href="
+    	    	        ./buzz?b=659&c=1
+            ">即将上映</a></li>
+                    <li><a   title="爱情电影" href="
+    	    	        ./buzz?b=338&c=1
+            ">爱情电影</a></li>
+                    <li><a class="odd"  title="喜剧电影" href="
+    	    	        ./buzz?b=340&c=1
+            ">喜剧电影</a></li>
+                    <li><a   title="惊悚电影" href="
+    	    	        ./buzz?b=339&c=1
+            ">惊悚电影</a></li>
+                    <li><a class="odd"  title="科幻电影" href="
+    	    	        ./buzz?b=437&c=1
+            ">科幻电影</a></li>
+                    <li><a   title="剧情电影" href="
+    	    	        ./buzz?b=337&c=1
+            ">剧情电影</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="box-cont">
+            <div class="hd">
+                <h2 data="26" class="title"><a href="./buzz?b=26&c=1">全部电影</a></h2>
+                <a class="more" href="./buzz?b=26&c=1">更多 &gt;</a>
+            </div>
+            <div class="bd">
+                <div class="tab">
+                    <div class="tab-bd">
+                        <div class="tab-box">
+
+
+
+
+
+
+
+                            <div class="list-tt">
+                                <span class="tt-index">排名</span>
+                                <span class="tt-title">关键词</span>
+                                <span class="tt-value">搜索指数</span>
+                            </div>
+                            <ul class="item-list">
+                                <li class="current">
+                                    <div class="item-hd">
+                                        <span class="num-top">1</span>
+
+
+                                        <a target="_blank" title="贫穷富爸爸" data="26|26" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C6%B6%C7%EE%B8%BB%B0%D6%B0%D6" href_top="./detail?b=26&w=%C6%B6%C7%EE%B8%BB%B0%D6%B0%D6&c=1">贫穷富爸爸</a>
+
+
+                                        <span class="icon-rise">45927</span>
+                                        <a href="./detail?b=26&w=%C6%B6%C7%EE%B8%BB%B0%D6%B0%D6&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display: block; height: 122px;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-top">2</span>
+
+
+                                        <a target="_blank" title="西部世界" data="26|26" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%CE%F7%B2%BF%CA%C0%BD%E7" href_top="./detail?b=26&w=%CE%F7%B2%BF%CA%C0%BD%E7&c=1">西部世界</a>
+
+
+                                        <span class="icon-fall">37373</span>
+                                        <a href="./detail?b=26&w=%CE%F7%B2%BF%CA%C0%BD%E7&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-top">3</span>
+
+
+                                        <a target="_blank" title="外公芳龄38" data="26|26" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%CD%E2%B9%AB%B7%BC%C1%E438" href_top="./detail?b=26&w=%CD%E2%B9%AB%B7%BC%C1%E438&c=1">外公芳龄38</a>
+
+
+                                        <span class="icon-fall">37088</span>
+                                        <a href="./detail?b=26&w=%CD%E2%B9%AB%B7%BC%C1%E438&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">4</span>
+
+
+                                        <a target="_blank" title="驴得水" data="26|26" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C2%BF%B5%C3%CB%AE" href_top="./detail?b=26&w=%C2%BF%B5%C3%CB%AE&c=1">驴得水</a>
+
+
+                                        <a class="icon-tuan" target="_blank" href="http://www.nuomi.com/film/62912?cid=008701">团购</a>
+
+                                        <span class="icon-fall">32757</span>
+                                        <a href="./detail?b=26&w=%C2%BF%B5%C3%CB%AE&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">5</span>
+
+
+                                        <a target="_blank" title="湄公河行动" data="26|26" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%E4%D8%B9%AB%BA%D3%D0%D0%B6%AF" href_top="./detail?b=26&w=%E4%D8%B9%AB%BA%D3%D0%D0%B6%AF&c=1">湄公河行动</a>
+
+
+                                        <a class="icon-tuan" target="_blank" href="http://www.nuomi.com/film/10097?cid=008701">团购</a>
+
+                                        <span class="icon-fall">29225</span>
+                                        <a href="./detail?b=26&w=%E4%D8%B9%AB%BA%D3%D0%D0%B6%AF&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">6</span>
+
+
+                                        <a target="_blank" title="微微一笑很倾城" data="26|26" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%CE%A2%CE%A2%D2%BB%D0%A6%BA%DC%C7%E3%B3%C7" href_top="./detail?b=26&w=%CE%A2%CE%A2%D2%BB%D0%A6%BA%DC%C7%E3%B3%C7&c=1">微微一笑很倾城</a>
+
+
+                                        <span class="icon-rise">22134</span>
+                                        <a href="./detail?b=26&w=%CE%A2%CE%A2%D2%BB%D0%A6%BA%DC%C7%E3%B3%C7&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">7</span>
+
+
+                                        <a target="_blank" title="七月与安生" data="26|26" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C6%DF%D4%C2%D3%EB%B0%B2%C9%FA" href_top="./detail?b=26&w=%C6%DF%D4%C2%D3%EB%B0%B2%C9%FA&c=1">七月与安生</a>
+
+
+                                        <a class="icon-tuan" target="_blank" href="http://www.nuomi.com/film/10107?cid=008701">团购</a>
+
+                                        <span class="icon-fall">21927</span>
+                                        <a href="./detail?b=26&w=%C6%DF%D4%C2%D3%EB%B0%B2%C9%FA&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">8</span>
+
+
+                                        <a target="_blank" title="奇异博士" data="26|26" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C6%E6%D2%EC%B2%A9%CA%BF" href_top="./detail?b=26&w=%C6%E6%D2%EC%B2%A9%CA%BF&c=1">奇异博士</a>
+
+
+                                        <span class="icon-rise">18314</span>
+                                        <a href="./detail?b=26&w=%C6%E6%D2%EC%B2%A9%CA%BF&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">9</span>
+
+
+                                        <a target="_blank" title="老九门番外之二月花开" data="26|26" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C0%CF%BE%C5%C3%C5%B7%AC%CD%E2%D6%AE%B6%FE%D4%C2%BB%A8%BF%AA" href_top="./detail?b=26&w=%C0%CF%BE%C5%C3%C5%B7%AC%CD%E2%D6%AE%B6%FE%D4%C2%BB%A8%BF%AA&c=1">老九门番外之二..</a>
+
+
+                                        <span class="icon-fall">15413</span>
+                                        <a href="./detail?b=26&w=%C0%CF%BE%C5%C3%C5%B7%AC%CD%E2%D6%AE%B6%FE%D4%C2%BB%A8%BF%AA&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">10</span>
+
+
+                                        <a target="_blank" title="血战铜锣湾" data="26|26" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%D1%AA%D5%BD%CD%AD%C2%E0%CD%E5" href_top="./detail?b=26&w=%D1%AA%D5%BD%CD%AD%C2%E0%CD%E5&c=1">血战铜锣湾</a>
+
+
+                                        <span class="icon-fall">15292</span>
+                                        <a href="./detail?b=26&w=%D1%AA%D5%BD%CD%AD%C2%E0%CD%E5&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                            </ul>
+                            <a class="whole" href="
+    	    	        ./buzz?b=26&c=1
+            ">完整榜单</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="box-cont">
+            <div class="hd">
+                <h2 data="661" class="title title-blue"><a href="./buzz?b=661&c=1">热映电影</a></h2>
+                <a class="more" href="./buzz?b=661&c=1">更多 &gt;</a>
+            </div>
+            <div class="bd">
+                <div class="tab">
+                    <div class="tab-bd tab-bd-blue">
+                        <div class="tab-box">
+
+
+
+
+
+
+
+                            <div class="list-tt">
+                                <span class="tt-index">排名</span>
+                                <span class="tt-title">关键词</span>
+                                <span class="tt-value">搜索指数</span>
+                            </div>
+                            <ul class="item-list">
+                                <li class="current">
+                                    <div class="item-hd">
+                                        <span class="num-top">1</span>
+
+
+                                        <a target="_blank" title="贫穷富爸爸" data="26|661" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C6%B6%C7%EE%B8%BB%B0%D6%B0%D6" href_top="./detail?b=661&w=%C6%B6%C7%EE%B8%BB%B0%D6%B0%D6&c=1">贫穷富爸爸</a>
+
+
+                                        <span class="icon-rise">45927</span>
+                                        <a href="./detail?b=661&w=%C6%B6%C7%EE%B8%BB%B0%D6%B0%D6&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display: block; height: 122px;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-top">2</span>
+
+
+                                        <a target="_blank" title="外公芳龄38" data="26|661" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%CD%E2%B9%AB%B7%BC%C1%E438" href_top="./detail?b=661&w=%CD%E2%B9%AB%B7%BC%C1%E438&c=1">外公芳龄38</a>
+
+
+                                        <span class="icon-fall">37088</span>
+                                        <a href="./detail?b=661&w=%CD%E2%B9%AB%B7%BC%C1%E438&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-top">3</span>
+
+
+                                        <a target="_blank" title="驴得水" data="26|661" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C2%BF%B5%C3%CB%AE" href_top="./detail?b=661&w=%C2%BF%B5%C3%CB%AE&c=1">驴得水</a>
+
+
+                                        <a class="icon-tuan" target="_blank" href="http://www.nuomi.com/film/62912?cid=008701">团购</a>
+
+                                        <span class="icon-fall">32757</span>
+                                        <a href="./detail?b=661&w=%C2%BF%B5%C3%CB%AE&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">4</span>
+
+
+                                        <a target="_blank" title="奇异博士" data="26|661" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C6%E6%D2%EC%B2%A9%CA%BF" href_top="./detail?b=661&w=%C6%E6%D2%EC%B2%A9%CA%BF&c=1">奇异博士</a>
+
+
+                                        <span class="icon-rise">18314</span>
+                                        <a href="./detail?b=661&w=%C6%E6%D2%EC%B2%A9%CA%BF&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">5</span>
+
+
+                                        <a target="_blank" title="小明和他的小伙伴们" data="26|661" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%D0%A1%C3%F7%BA%CD%CB%FB%B5%C4%D0%A1%BB%EF%B0%E9%C3%C7" href_top="./detail?b=661&w=%D0%A1%C3%F7%BA%CD%CB%FB%B5%C4%D0%A1%BB%EF%B0%E9%C3%C7&c=1">小明和他的小伙..</a>
+
+
+                                        <a class="icon-tuan" target="_blank" href="http://www.nuomi.com/film/62892?cid=008701">团购</a>
+
+                                        <span class="icon-fall">11810</span>
+                                        <a href="./detail?b=661&w=%D0%A1%C3%F7%BA%CD%CB%FB%B5%C4%D0%A1%BB%EF%B0%E9%C3%C7&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">6</span>
+
+
+                                        <a target="_blank" title="但丁密码" data="26|661" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%B5%AB%B6%A1%C3%DC%C2%EB" href_top="./detail?b=661&w=%B5%AB%B6%A1%C3%DC%C2%EB&c=1">但丁密码</a>
+
+
+                                        <a class="icon-tuan" target="_blank" href="http://www.nuomi.com/film/10009?cid=008701">团购</a>
+
+                                        <span class="icon-fall">11624</span>
+                                        <a href="./detail?b=661&w=%B5%AB%B6%A1%C3%DC%C2%EB&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">7</span>
+
+
+                                        <a target="_blank" title="恐怖笔记" data="26|661" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%BF%D6%B2%C0%B1%CA%BC%C7" href_top="./detail?b=661&w=%BF%D6%B2%C0%B1%CA%BC%C7&c=1">恐怖笔记</a>
+
+
+                                        <a class="icon-tuan" target="_blank" href="http://www.nuomi.com/film/16478?cid=008701">团购</a>
+
+                                        <span class="icon-rise">9143</span>
+                                        <a href="./detail?b=661&w=%BF%D6%B2%C0%B1%CA%BC%C7&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">8</span>
+
+
+                                        <a target="_blank" title="勇士" data="26|661" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%D3%C2%CA%BF" href_top="./detail?b=661&w=%D3%C2%CA%BF&c=1">勇士</a>
+
+
+                                        <a class="icon-tuan" target="_blank" href="http://www.nuomi.com/film/10342?cid=008701">团购</a>
+
+                                        <span class="icon-rise">6852</span>
+                                        <a href="./detail?b=661&w=%D3%C2%CA%BF&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">9</span>
+
+
+                                        <a target="_blank" title="钢铁骑士" data="26|661" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%B8%D6%CC%FA%C6%EF%CA%BF" href_top="./detail?b=661&w=%B8%D6%CC%FA%C6%EF%CA%BF&c=1">钢铁骑士</a>
+
+
+                                        <a class="icon-tuan" target="_blank" href="http://www.nuomi.com/film/25991?cid=008701">团购</a>
+
+                                        <span class="icon-fall">6537</span>
+                                        <a href="./detail?b=661&w=%B8%D6%CC%FA%C6%EF%CA%BF&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">10</span>
+
+
+                                        <a target="_blank" title="我不是潘金莲" data="26|661" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%CE%D2%B2%BB%CA%C7%C5%CB%BD%F0%C1%AB" href_top="./detail?b=661&w=%CE%D2%B2%BB%CA%C7%C5%CB%BD%F0%C1%AB&c=1">我不是潘金莲</a>
+
+
+                                        <span class="icon-rise">4308</span>
+                                        <a href="./detail?b=661&w=%CE%D2%B2%BB%CA%C7%C5%CB%BD%F0%C1%AB&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                            </ul>
+                            <a class="whole" href="
+    	    	        ./buzz?b=661&c=1
+            ">完整榜单</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="box-cont">
+            <div class="hd">
+                <h2 data="659" class="title title-brown"><a href="./buzz?b=659&c=1">即将上映</a></h2>
+                <a class="more" href="./buzz?b=659&c=1">更多 &gt;</a>
+            </div>
+            <div class="bd">
+                <div class="tab">
+                    <div class="tab-bd tab-bd-brown">
+                        <div class="tab-box">
+
+
+
+
+
+
+
+                            <div class="list-tt">
+                                <span class="tt-index">排名</span>
+                                <span class="tt-title">关键词</span>
+                                <span class="tt-value">搜索指数</span>
+                            </div>
+                            <ul class="item-list">
+                                <li class="current">
+                                    <div class="item-hd">
+                                        <span class="num-top">1</span>
+
+
+                                        <a target="_blank" title="贫穷富爸爸" data="26|659" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C6%B6%C7%EE%B8%BB%B0%D6%B0%D6" href_top="./detail?b=659&w=%C6%B6%C7%EE%B8%BB%B0%D6%B0%D6&c=1">贫穷富爸爸</a>
+
+
+                                        <span class="icon-rise">45927</span>
+                                        <a href="./detail?b=659&w=%C6%B6%C7%EE%B8%BB%B0%D6%B0%D6&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display: block; height: 122px;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-top">2</span>
+
+
+                                        <a target="_blank" title="外公芳龄38" data="26|659" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%CD%E2%B9%AB%B7%BC%C1%E438" href_top="./detail?b=659&w=%CD%E2%B9%AB%B7%BC%C1%E438&c=1">外公芳龄38</a>
+
+
+                                        <span class="icon-fall">37088</span>
+                                        <a href="./detail?b=659&w=%CD%E2%B9%AB%B7%BC%C1%E438&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-top">3</span>
+
+
+                                        <a target="_blank" title="间谍同盟" data="26|659" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%BC%E4%B5%FD%CD%AC%C3%CB" href_top="./detail?b=659&w=%BC%E4%B5%FD%CD%AC%C3%CB&c=1">间谍同盟</a>
+
+
+                                        <span class="icon-rise">9773</span>
+                                        <a href="./detail?b=659&w=%BC%E4%B5%FD%CD%AC%C3%CB&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">4</span>
+
+
+                                        <a target="_blank" title="我不是潘金莲" data="26|659" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%CE%D2%B2%BB%CA%C7%C5%CB%BD%F0%C1%AB" href_top="./detail?b=659&w=%CE%D2%B2%BB%CA%C7%C5%CB%BD%F0%C1%AB&c=1">我不是潘金莲</a>
+
+
+                                        <span class="icon-rise">4308</span>
+                                        <a href="./detail?b=659&w=%CE%D2%B2%BB%CA%C7%C5%CB%BD%F0%C1%AB&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">5</span>
+
+
+                                        <a target="_blank" title="三少爷的剑" data="26|659" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C8%FD%C9%D9%D2%AF%B5%C4%BD%A3" href_top="./detail?b=659&w=%C8%FD%C9%D9%D2%AF%B5%C4%BD%A3&c=1">三少爷的剑</a>
+
+
+                                        <span class="icon-rise">2555</span>
+                                        <a href="./detail?b=659&w=%C8%FD%C9%D9%D2%AF%B5%C4%BD%A3&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">6</span>
+
+
+                                        <a target="_blank" title="勇士之门" data="26|659" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%D3%C2%CA%BF%D6%AE%C3%C5" href_top="./detail?b=659&w=%D3%C2%CA%BF%D6%AE%C3%C5&c=1">勇士之门</a>
+
+
+                                        <span class="icon-fall">1841</span>
+                                        <a href="./detail?b=659&w=%D3%C2%CA%BF%D6%AE%C3%C5&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">7</span>
+
+
+                                        <a target="_blank" title="神奇动物在哪里" data="26|659" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C9%F1%C6%E6%B6%AF%CE%EF%D4%DA%C4%C4%C0%EF" href_top="./detail?b=659&w=%C9%F1%C6%E6%B6%AF%CE%EF%D4%DA%C4%C4%C0%EF&c=1">神奇动物在哪里</a>
+
+
+                                        <span class="icon-rise">1816</span>
+                                        <a href="./detail?b=659&w=%C9%F1%C6%E6%B6%AF%CE%EF%D4%DA%C4%C4%C0%EF&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">8</span>
+
+
+                                        <a target="_blank" title="建党伟业" data="26|659" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%BD%A8%B5%B3%CE%B0%D2%B5" href_top="./detail?b=659&w=%BD%A8%B5%B3%CE%B0%D2%B5&c=1">建党伟业</a>
+
+
+                                        <a class="icon-tuan" target="_blank" href="http://www.nuomi.com/film/60314?cid=008701">团购</a>
+
+                                        <span class="icon-fall">1074</span>
+                                        <a href="./detail?b=659&w=%BD%A8%B5%B3%CE%B0%D2%B5&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">9</span>
+
+
+                                        <a target="_blank" title="航海王之黄金城" data="26|659" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%BA%BD%BA%A3%CD%F5%D6%AE%BB%C6%BD%F0%B3%C7" href_top="./detail?b=659&w=%BA%BD%BA%A3%CD%F5%D6%AE%BB%C6%BD%F0%B3%C7&c=1">航海王之黄金城</a>
+
+
+                                        <span class="icon-rise">927</span>
+                                        <a href="./detail?b=659&w=%BA%BD%BA%A3%CD%F5%D6%AE%BB%C6%BD%F0%B3%C7&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">10</span>
+
+
+                                        <a target="_blank" title="佩小姐的奇幻城堡" data="26|659" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C5%E5%D0%A1%BD%E3%B5%C4%C6%E6%BB%C3%B3%C7%B1%A4" href_top="./detail?b=659&w=%C5%E5%D0%A1%BD%E3%B5%C4%C6%E6%BB%C3%B3%C7%B1%A4&c=1">佩小姐的奇幻城..</a>
+
+
+                                        <span class="icon-fall">914</span>
+                                        <a href="./detail?b=659&w=%C5%E5%D0%A1%BD%E3%B5%C4%C6%E6%BB%C3%B3%C7%B1%A4&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                            </ul>
+                            <a class="whole" href="
+    	    	        ./buzz?b=659&c=1
+            ">完整榜单</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="box-cont">
+            <div class="hd">
+                <h2 data="338" class="title"><a href="./buzz?b=338&c=1">爱情电影</a></h2>
+                <a class="more" href="./buzz?b=338&c=1">更多 &gt;</a>
+            </div>
+            <div class="bd">
+                <div class="tab">
+                    <div class="tab-bd">
+                        <div class="tab-box">
+
+
+
+
+
+
+
+                            <div class="list-tt">
+                                <span class="tt-index">排名</span>
+                                <span class="tt-title">关键词</span>
+                                <span class="tt-value">搜索指数</span>
+                            </div>
+                            <ul class="item-list">
+                                <li class="current">
+                                    <div class="item-hd">
+                                        <span class="num-top">1</span>
+
+
+                                        <a target="_blank" title="致我们终将逝去的青春" data="26|338" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%D6%C2%CE%D2%C3%C7%D6%D5%BD%AB%CA%C5%C8%A5%B5%C4%C7%E0%B4%BA" href_top="./detail?b=338&w=%D6%C2%CE%D2%C3%C7%D6%D5%BD%AB%CA%C5%C8%A5%B5%C4%C7%E0%B4%BA&c=1">致我们终将逝去..</a>
+
+
+                                        <span class="icon-rise">2361</span>
+                                        <a href="./detail?b=338&w=%D6%C2%CE%D2%C3%C7%D6%D5%BD%AB%CA%C5%C8%A5%B5%C4%C7%E0%B4%BA&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display: block; height: 122px;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-top">2</span>
+
+
+                                        <a target="_blank" title="美国舞男" data="26|338" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C3%C0%B9%FA%CE%E8%C4%D0" href_top="./detail?b=338&w=%C3%C0%B9%FA%CE%E8%C4%D0&c=1">美国舞男</a>
+
+
+                                        <span class="icon-rise">2315</span>
+                                        <a href="./detail?b=338&w=%C3%C0%B9%FA%CE%E8%C4%D0&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-top">3</span>
+
+
+                                        <a target="_blank" title="白夜行" data="26|338" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%B0%D7%D2%B9%D0%D0" href_top="./detail?b=338&w=%B0%D7%D2%B9%D0%D0&c=1">白夜行</a>
+
+
+                                        <span class="icon-fall">2035</span>
+                                        <a href="./detail?b=338&w=%B0%D7%D2%B9%D0%D0&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">4</span>
+
+
+                                        <a target="_blank" title="傲慢与偏见" data="26|338" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%B0%C1%C2%FD%D3%EB%C6%AB%BC%FB" href_top="./detail?b=338&w=%B0%C1%C2%FD%D3%EB%C6%AB%BC%FB&c=1">傲慢与偏见</a>
+
+
+                                        <span class="icon-rise">1917</span>
+                                        <a href="./detail?b=338&w=%B0%C1%C2%FD%D3%EB%C6%AB%BC%FB&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">5</span>
+
+
+                                        <a target="_blank" title="不要向下看" data="26|338" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%B2%BB%D2%AA%CF%F2%CF%C2%BF%B4" href_top="./detail?b=338&w=%B2%BB%D2%AA%CF%F2%CF%C2%BF%B4&c=1">不要向下看</a>
+
+
+                                        <span class="icon-rise">1779</span>
+                                        <a href="./detail?b=338&w=%B2%BB%D2%AA%CF%F2%CF%C2%BF%B4&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">6</span>
+
+
+                                        <a target="_blank" title="霸王别姬" data="26|338" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%B0%D4%CD%F5%B1%F0%BC%A7" href_top="./detail?b=338&w=%B0%D4%CD%F5%B1%F0%BC%A7&c=1">霸王别姬</a>
+
+
+                                        <span class="icon-fall">1749</span>
+                                        <a href="./detail?b=338&w=%B0%D4%CD%F5%B1%F0%BC%A7&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">7</span>
+
+
+                                        <a target="_blank" title="危险性游戏" data="26|338" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%CE%A3%CF%D5%D0%D4%D3%CE%CF%B7" href_top="./detail?b=338&w=%CE%A3%CF%D5%D0%D4%D3%CE%CF%B7&c=1">危险性游戏</a>
+
+
+                                        <span class="icon-fall">1589</span>
+                                        <a href="./detail?b=338&w=%CE%A3%CF%D5%D0%D4%D3%CE%CF%B7&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">8</span>
+
+
+                                        <a target="_blank" title="小时代" data="26|338" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%D0%A1%CA%B1%B4%FA" href_top="./detail?b=338&w=%D0%A1%CA%B1%B4%FA&c=1">小时代</a>
+
+
+                                        <span class="icon-fall">1487</span>
+                                        <a href="./detail?b=338&w=%D0%A1%CA%B1%B4%FA&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">9</span>
+
+
+                                        <a target="_blank" title="海上钢琴师" data="26|338" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%BA%A3%C9%CF%B8%D6%C7%D9%CA%A6" href_top="./detail?b=338&w=%BA%A3%C9%CF%B8%D6%C7%D9%CA%A6&c=1">海上钢琴师</a>
+
+
+                                        <span class="icon-fall">1220</span>
+                                        <a href="./detail?b=338&w=%BA%A3%C9%CF%B8%D6%C7%D9%CA%A6&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">10</span>
+
+
+                                        <a target="_blank" title="不能说的秘密" data="26|338" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%B2%BB%C4%DC%CB%B5%B5%C4%C3%D8%C3%DC" href_top="./detail?b=338&w=%B2%BB%C4%DC%CB%B5%B5%C4%C3%D8%C3%DC&c=1">不能说的秘密</a>
+
+
+                                        <span class="icon-rise">1177</span>
+                                        <a href="./detail?b=338&w=%B2%BB%C4%DC%CB%B5%B5%C4%C3%D8%C3%DC&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                            </ul>
+                            <a class="whole" href="
+    	    	        ./buzz?b=338&c=1
+            ">完整榜单</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="box-cont">
+            <div class="hd">
+                <h2 data="340" class="title title-blue"><a href="./buzz?b=340&c=1">喜剧电影</a></h2>
+                <a class="more" href="./buzz?b=340&c=1">更多 &gt;</a>
+            </div>
+            <div class="bd">
+                <div class="tab">
+                    <div class="tab-bd tab-bd-blue">
+                        <div class="tab-box">
+
+
+
+
+
+
+
+                            <div class="list-tt">
+                                <span class="tt-index">排名</span>
+                                <span class="tt-title">关键词</span>
+                                <span class="tt-value">搜索指数</span>
+                            </div>
+                            <ul class="item-list">
+                                <li class="current">
+                                    <div class="item-hd">
+                                        <span class="num-top">1</span>
+
+
+                                        <a target="_blank" title="呖咕呖咕新年财" data="26|340" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%DF%BF%B9%BE%DF%BF%B9%BE%D0%C2%C4%EA%B2%C6" href_top="./detail?b=340&w=%DF%BF%B9%BE%DF%BF%B9%BE%D0%C2%C4%EA%B2%C6&c=1">呖咕呖咕新年财</a>
+
+
+                                        <span class="icon-rise">3097</span>
+                                        <a href="./detail?b=340&w=%DF%BF%B9%BE%DF%BF%B9%BE%D0%C2%C4%EA%B2%C6&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display: block; height: 122px;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-top">2</span>
+
+
+                                        <a target="_blank" title="熊出没之夺宝熊兵" data="26|340" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%D0%DC%B3%F6%C3%BB%D6%AE%B6%E1%B1%A6%D0%DC%B1%F8" href_top="./detail?b=340&w=%D0%DC%B3%F6%C3%BB%D6%AE%B6%E1%B1%A6%D0%DC%B1%F8&c=1">熊出没之夺宝熊..</a>
+
+
+                                        <span class="icon-rise">2994</span>
+                                        <a href="./detail?b=340&w=%D0%DC%B3%F6%C3%BB%D6%AE%B6%E1%B1%A6%D0%DC%B1%F8&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-top">3</span>
+
+
+                                        <a target="_blank" title="十二生肖" data="26|340" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%CA%AE%B6%FE%C9%FA%D0%A4" href_top="./detail?b=340&w=%CA%AE%B6%FE%C9%FA%D0%A4&c=1">十二生肖</a>
+
+
+                                        <span class="icon-fall">2495</span>
+                                        <a href="./detail?b=340&w=%CA%AE%B6%FE%C9%FA%D0%A4&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">4</span>
+
+
+                                        <a target="_blank" title="僵尸先生" data="26|340" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%BD%A9%CA%AC%CF%C8%C9%FA" href_top="./detail?b=340&w=%BD%A9%CA%AC%CF%C8%C9%FA&c=1">僵尸先生</a>
+
+
+                                        <span class="icon-fall">2307</span>
+                                        <a href="./detail?b=340&w=%BD%A9%CA%AC%CF%C8%C9%FA&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">5</span>
+
+
+                                        <a target="_blank" title="赌神" data="26|340" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%B6%C4%C9%F1" href_top="./detail?b=340&w=%B6%C4%C9%F1&c=1">赌神</a>
+
+
+                                        <span class="icon-fall">2035</span>
+                                        <a href="./detail?b=340&w=%B6%C4%C9%F1&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">6</span>
+
+
+                                        <a target="_blank" title="功夫2" data="26|340" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%B9%A6%B7%F22" href_top="./detail?b=340&w=%B9%A6%B7%F22&c=1">功夫2</a>
+
+
+                                        <span class="icon-fall">1591</span>
+                                        <a href="./detail?b=340&w=%B9%A6%B7%F22&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">7</span>
+
+
+                                        <a target="_blank" title="让子弹飞" data="26|340" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C8%C3%D7%D3%B5%AF%B7%C9" href_top="./detail?b=340&w=%C8%C3%D7%D3%B5%AF%B7%C9&c=1">让子弹飞</a>
+
+
+                                        <span class="icon-rise">1581</span>
+                                        <a href="./detail?b=340&w=%C8%C3%D7%D3%B5%AF%B7%C9&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">8</span>
+
+
+                                        <a target="_blank" title="西游·降魔篇" data="26|340" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%CE%F7%D3%CE%A1%A4%BD%B5%C4%A7%C6%AA" href_top="./detail?b=340&w=%CE%F7%D3%CE%A1%A4%BD%B5%C4%A7%C6%AA&c=1">西游·降魔篇</a>
+
+
+                                        <span class="icon-rise">1393</span>
+                                        <a href="./detail?b=340&w=%CE%F7%D3%CE%A1%A4%BD%B5%C4%A7%C6%AA&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">9</span>
+
+
+                                        <a target="_blank" title="杀人回忆" data="26|340" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C9%B1%C8%CB%BB%D8%D2%E4" href_top="./detail?b=340&w=%C9%B1%C8%CB%BB%D8%D2%E4&c=1">杀人回忆</a>
+
+
+                                        <span class="icon-fall">1345</span>
+                                        <a href="./detail?b=340&w=%C9%B1%C8%CB%BB%D8%D2%E4&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">10</span>
+
+
+                                        <a target="_blank" title="黑衣人3" data="26|340" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%BA%DA%D2%C2%C8%CB3" href_top="./detail?b=340&w=%BA%DA%D2%C2%C8%CB3&c=1">黑衣人3</a>
+
+
+                                        <span class="icon-fall">1316</span>
+                                        <a href="./detail?b=340&w=%BA%DA%D2%C2%C8%CB3&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                            </ul>
+                            <a class="whole" href="
+    	    	        ./buzz?b=340&c=1
+            ">完整榜单</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="box-cont">
+            <div class="hd">
+                <h2 data="339" class="title title-brown"><a href="./buzz?b=339&c=1">惊悚电影</a></h2>
+                <a class="more" href="./buzz?b=339&c=1">更多 &gt;</a>
+            </div>
+            <div class="bd">
+                <div class="tab">
+                    <div class="tab-bd tab-bd-brown">
+                        <div class="tab-box">
+
+
+
+
+
+
+
+                            <div class="list-tt">
+                                <span class="tt-index">排名</span>
+                                <span class="tt-title">关键词</span>
+                                <span class="tt-value">搜索指数</span>
+                            </div>
+                            <ul class="item-list">
+                                <li class="current">
+                                    <div class="item-hd">
+                                        <span class="num-top">1</span>
+
+
+                                        <a target="_blank" title="达芬奇密码" data="26|339" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%B4%EF%B7%D2%C6%E6%C3%DC%C2%EB" href_top="./detail?b=339&w=%B4%EF%B7%D2%C6%E6%C3%DC%C2%EB&c=1">达芬奇密码</a>
+
+
+                                        <span class="icon-fall">5222</span>
+                                        <a href="./detail?b=339&w=%B4%EF%B7%D2%C6%E6%C3%DC%C2%EB&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display: block; height: 122px;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-top">2</span>
+
+
+                                        <a target="_blank" title="机械师" data="26|339" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%BB%FA%D0%B5%CA%A6" href_top="./detail?b=339&w=%BB%FA%D0%B5%CA%A6&c=1">机械师</a>
+
+
+                                        <span class="icon-fall">4911</span>
+                                        <a href="./detail?b=339&w=%BB%FA%D0%B5%CA%A6&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-top">3</span>
+
+
+                                        <a target="_blank" title="生死狙击" data="26|339" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C9%FA%CB%C0%BE%D1%BB%F7" href_top="./detail?b=339&w=%C9%FA%CB%C0%BE%D1%BB%F7&c=1">生死狙击</a>
+
+
+                                        <span class="icon-fall">3606</span>
+                                        <a href="./detail?b=339&w=%C9%FA%CB%C0%BE%D1%BB%F7&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">4</span>
+
+
+                                        <a target="_blank" title="死神来了" data="26|339" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%CB%C0%C9%F1%C0%B4%C1%CB" href_top="./detail?b=339&w=%CB%C0%C9%F1%C0%B4%C1%CB&c=1">死神来了</a>
+
+
+                                        <span class="icon-fair">3595</span>
+                                        <a href="./detail?b=339&w=%CB%C0%C9%F1%C0%B4%C1%CB&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">5</span>
+
+
+                                        <a target="_blank" title="这个杀手不太冷" data="26|339" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%D5%E2%B8%F6%C9%B1%CA%D6%B2%BB%CC%AB%C0%E4" href_top="./detail?b=339&w=%D5%E2%B8%F6%C9%B1%CA%D6%B2%BB%CC%AB%C0%E4&c=1">这个杀手不太冷</a>
+
+
+                                        <span class="icon-rise">2591</span>
+                                        <a href="./detail?b=339&w=%D5%E2%B8%F6%C9%B1%CA%D6%B2%BB%CC%AB%C0%E4&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">6</span>
+
+
+                                        <a target="_blank" title="赤裸羔羊" data="26|339" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%B3%E0%C2%E3%B8%E1%D1%F2" href_top="./detail?b=339&w=%B3%E0%C2%E3%B8%E1%D1%F2&c=1">赤裸羔羊</a>
+
+
+                                        <span class="icon-rise">2500</span>
+                                        <a href="./detail?b=339&w=%B3%E0%C2%E3%B8%E1%D1%F2&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">7</span>
+
+
+                                        <a target="_blank" title="普罗米修斯" data="26|339" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C6%D5%C2%DE%C3%D7%D0%DE%CB%B9" href_top="./detail?b=339&w=%C6%D5%C2%DE%C3%D7%D0%DE%CB%B9&c=1">普罗米修斯</a>
+
+
+                                        <span class="icon-rise">2364</span>
+                                        <a href="./detail?b=339&w=%C6%D5%C2%DE%C3%D7%D0%DE%CB%B9&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">8</span>
+
+
+                                        <a target="_blank" title="美国舞男" data="26|339" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C3%C0%B9%FA%CE%E8%C4%D0" href_top="./detail?b=339&w=%C3%C0%B9%FA%CE%E8%C4%D0&c=1">美国舞男</a>
+
+
+                                        <span class="icon-rise">2315</span>
+                                        <a href="./detail?b=339&w=%C3%C0%B9%FA%CE%E8%C4%D0&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">9</span>
+
+
+                                        <a target="_blank" title="白夜行" data="26|339" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%B0%D7%D2%B9%D0%D0" href_top="./detail?b=339&w=%B0%D7%D2%B9%D0%D0&c=1">白夜行</a>
+
+
+                                        <span class="icon-fall">2035</span>
+                                        <a href="./detail?b=339&w=%B0%D7%D2%B9%D0%D0&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">10</span>
+
+
+                                        <a target="_blank" title="捉迷藏" data="26|339" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%D7%BD%C3%D4%B2%D8" href_top="./detail?b=339&w=%D7%BD%C3%D4%B2%D8&c=1">捉迷藏</a>
+
+
+                                        <span class="icon-fall">2035</span>
+                                        <a href="./detail?b=339&w=%D7%BD%C3%D4%B2%D8&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                            </ul>
+                            <a class="whole" href="
+    	    	        ./buzz?b=339&c=1
+            ">完整榜单</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="box-cont">
+            <div class="hd">
+                <h2 data="437" class="title"><a href="./buzz?b=437&c=1">科幻电影</a></h2>
+                <a class="more" href="./buzz?b=437&c=1">更多 &gt;</a>
+            </div>
+            <div class="bd">
+                <div class="tab">
+                    <div class="tab-bd">
+                        <div class="tab-box">
+
+
+
+
+
+
+
+                            <div class="list-tt">
+                                <span class="tt-index">排名</span>
+                                <span class="tt-title">关键词</span>
+                                <span class="tt-value">搜索指数</span>
+                            </div>
+                            <ul class="item-list">
+                                <li class="current">
+                                    <div class="item-hd">
+                                        <span class="num-top">1</span>
+
+
+                                        <a target="_blank" title="西部世界" data="26|437" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%CE%F7%B2%BF%CA%C0%BD%E7" href_top="./detail?b=437&w=%CE%F7%B2%BF%CA%C0%BD%E7&c=1">西部世界</a>
+
+
+                                        <span class="icon-fall">37373</span>
+                                        <a href="./detail?b=437&w=%CE%F7%B2%BF%CA%C0%BD%E7&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display: block; height: 122px;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-top">2</span>
+
+
+                                        <a target="_blank" title="三体" data="26|437" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C8%FD%CC%E5" href_top="./detail?b=437&w=%C8%FD%CC%E5&c=1">三体</a>
+
+
+                                        <span class="icon-rise">3475</span>
+                                        <a href="./detail?b=437&w=%C8%FD%CC%E5&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-top">3</span>
+
+
+                                        <a target="_blank" title="钢铁侠3" data="26|437" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%B8%D6%CC%FA%CF%C03" href_top="./detail?b=437&w=%B8%D6%CC%FA%CF%C03&c=1">钢铁侠3</a>
+
+
+                                        <span class="icon-fair">2718</span>
+                                        <a href="./detail?b=437&w=%B8%D6%CC%FA%CF%C03&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">4</span>
+
+
+                                        <a target="_blank" title="普罗米修斯" data="26|437" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C6%D5%C2%DE%C3%D7%D0%DE%CB%B9" href_top="./detail?b=437&w=%C6%D5%C2%DE%C3%D7%D0%DE%CB%B9&c=1">普罗米修斯</a>
+
+
+                                        <span class="icon-rise">2364</span>
+                                        <a href="./detail?b=437&w=%C6%D5%C2%DE%C3%D7%D0%DE%CB%B9&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">5</span>
+
+
+                                        <a target="_blank" title="x战警" data="26|437" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=x%D5%BD%BE%AF" href_top="./detail?b=437&w=x%D5%BD%BE%AF&c=1">x战警</a>
+
+
+                                        <span class="icon-rise">2216</span>
+                                        <a href="./detail?b=437&w=x%D5%BD%BE%AF&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">6</span>
+
+
+                                        <a target="_blank" title="星际迷航2" data="26|437" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%D0%C7%BC%CA%C3%D4%BA%BD2" href_top="./detail?b=437&w=%D0%C7%BC%CA%C3%D4%BA%BD2&c=1">星际迷航2</a>
+
+
+                                        <span class="icon-fall">2187</span>
+                                        <a href="./detail?b=437&w=%D0%C7%BC%CA%C3%D4%BA%BD2&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">7</span>
+
+
+                                        <a target="_blank" title="阿凡达" data="26|437" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%B0%A2%B7%B2%B4%EF" href_top="./detail?b=437&w=%B0%A2%B7%B2%B4%EF&c=1">阿凡达</a>
+
+
+                                        <span class="icon-rise">2077</span>
+                                        <a href="./detail?b=437&w=%B0%A2%B7%B2%B4%EF&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">8</span>
+
+
+                                        <a target="_blank" title="女超人" data="26|437" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C5%AE%B3%AC%C8%CB" href_top="./detail?b=437&w=%C5%AE%B3%AC%C8%CB&c=1">女超人</a>
+
+
+                                        <span class="icon-fall">1879</span>
+                                        <a href="./detail?b=437&w=%C5%AE%B3%AC%C8%CB&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">9</span>
+
+
+                                        <a target="_blank" title="人工智能" data="26|437" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C8%CB%B9%A4%D6%C7%C4%DC" href_top="./detail?b=437&w=%C8%CB%B9%A4%D6%C7%C4%DC&c=1">人工智能</a>
+
+
+                                        <span class="icon-rise">1854</span>
+                                        <a href="./detail?b=437&w=%C8%CB%B9%A4%D6%C7%C4%DC&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">10</span>
+
+
+                                        <a target="_blank" title="僵尸世界大战" data="26|437" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%BD%A9%CA%AC%CA%C0%BD%E7%B4%F3%D5%BD" href_top="./detail?b=437&w=%BD%A9%CA%AC%CA%C0%BD%E7%B4%F3%D5%BD&c=1">僵尸世界大战</a>
+
+
+                                        <span class="icon-fall">1720</span>
+                                        <a href="./detail?b=437&w=%BD%A9%CA%AC%CA%C0%BD%E7%B4%F3%D5%BD&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                            </ul>
+                            <a class="whole" href="
+    	    	        ./buzz?b=437&c=1
+            ">完整榜单</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="box-cont">
+            <div class="hd">
+                <h2 data="337" class="title title-blue"><a href="./buzz?b=337&c=1">剧情电影</a></h2>
+                <a class="more" href="./buzz?b=337&c=1">更多 &gt;</a>
+            </div>
+            <div class="bd">
+                <div class="tab">
+                    <div class="tab-bd tab-bd-blue">
+                        <div class="tab-box">
+
+
+
+
+
+
+
+                            <div class="list-tt">
+                                <span class="tt-index">排名</span>
+                                <span class="tt-title">关键词</span>
+                                <span class="tt-value">搜索指数</span>
+                            </div>
+                            <ul class="item-list">
+                                <li class="current">
+                                    <div class="item-hd">
+                                        <span class="num-top">1</span>
+
+
+                                        <a target="_blank" title="达芬奇密码" data="26|337" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%B4%EF%B7%D2%C6%E6%C3%DC%C2%EB" href_top="./detail?b=337&w=%B4%EF%B7%D2%C6%E6%C3%DC%C2%EB&c=1">达芬奇密码</a>
+
+
+                                        <span class="icon-fall">5222</span>
+                                        <a href="./detail?b=337&w=%B4%EF%B7%D2%C6%E6%C3%DC%C2%EB&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display: block; height: 122px;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-top">2</span>
+
+
+                                        <a target="_blank" title="机械师" data="26|337" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%BB%FA%D0%B5%CA%A6" href_top="./detail?b=337&w=%BB%FA%D0%B5%CA%A6&c=1">机械师</a>
+
+
+                                        <span class="icon-fall">4911</span>
+                                        <a href="./detail?b=337&w=%BB%FA%D0%B5%CA%A6&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-top">3</span>
+
+
+                                        <a target="_blank" title="钢铁侠3" data="26|337" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%B8%D6%CC%FA%CF%C03" href_top="./detail?b=337&w=%B8%D6%CC%FA%CF%C03&c=1">钢铁侠3</a>
+
+
+                                        <span class="icon-fair">2718</span>
+                                        <a href="./detail?b=337&w=%B8%D6%CC%FA%CF%C03&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">4</span>
+
+
+                                        <a target="_blank" title="普罗米修斯" data="26|337" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%C6%D5%C2%DE%C3%D7%D0%DE%CB%B9" href_top="./detail?b=337&w=%C6%D5%C2%DE%C3%D7%D0%DE%CB%B9&c=1">普罗米修斯</a>
+
+
+                                        <span class="icon-rise">2364</span>
+                                        <a href="./detail?b=337&w=%C6%D5%C2%DE%C3%D7%D0%DE%CB%B9&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">5</span>
+
+
+                                        <a target="_blank" title="致我们终将逝去的青春" data="26|337" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%D6%C2%CE%D2%C3%C7%D6%D5%BD%AB%CA%C5%C8%A5%B5%C4%C7%E0%B4%BA" href_top="./detail?b=337&w=%D6%C2%CE%D2%C3%C7%D6%D5%BD%AB%CA%C5%C8%A5%B5%C4%C7%E0%B4%BA&c=1">致我们终将逝去..</a>
+
+
+                                        <span class="icon-rise">2361</span>
+                                        <a href="./detail?b=337&w=%D6%C2%CE%D2%C3%C7%D6%D5%BD%AB%CA%C5%C8%A5%B5%C4%C7%E0%B4%BA&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">6</span>
+
+
+                                        <a target="_blank" title="极品飞车" data="26|337" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%BC%AB%C6%B7%B7%C9%B3%B5" href_top="./detail?b=337&w=%BC%AB%C6%B7%B7%C9%B3%B5&c=1">极品飞车</a>
+
+
+                                        <span class="icon-fair">2126</span>
+                                        <a href="./detail?b=337&w=%BC%AB%C6%B7%B7%C9%B3%B5&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">7</span>
+
+
+                                        <a target="_blank" title="阿甘正传" data="26|337" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%B0%A2%B8%CA%D5%FD%B4%AB" href_top="./detail?b=337&w=%B0%A2%B8%CA%D5%FD%B4%AB&c=1">阿甘正传</a>
+
+
+                                        <span class="icon-rise">2066</span>
+                                        <a href="./detail?b=337&w=%B0%A2%B8%CA%D5%FD%B4%AB&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">8</span>
+
+
+                                        <a target="_blank" title="蜘蛛侠" data="26|337" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%D6%A9%D6%EB%CF%C0" href_top="./detail?b=337&w=%D6%A9%D6%EB%CF%C0&c=1">蜘蛛侠</a>
+
+
+                                        <span class="icon-fall">1861</span>
+                                        <a href="./detail?b=337&w=%D6%A9%D6%EB%CF%C0&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">9</span>
+
+
+                                        <a target="_blank" title="小时代" data="26|337" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%D0%A1%CA%B1%B4%FA" href_top="./detail?b=337&w=%D0%A1%CA%B1%B4%FA&c=1">小时代</a>
+
+
+                                        <span class="icon-fall">1487</span>
+                                        <a href="./detail?b=337&w=%D0%A1%CA%B1%B4%FA&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                                <li >
+                                    <div class="item-hd">
+                                        <span class="num-normal">10</span>
+
+
+                                        <a target="_blank" title="复仇者联盟" data="26|337" class="list-title" href="http://www.baidu.com/baidu?cl=3&tn=SE_baiduhomet8_jmjb7mjw&fr=top1000&wd=%B8%B4%B3%F0%D5%DF%C1%AA%C3%CB" href_top="./detail?b=337&w=%B8%B4%B3%F0%D5%DF%C1%AA%C3%CB&c=1">复仇者联盟</a>
+
+
+                                        <span class="icon-rise">1475</span>
+                                        <a href="./detail?b=337&w=%B8%B4%B3%F0%D5%DF%C1%AA%C3%CB&c=1" class="icon-search icon-xiang-imp" target="_blank">search</a>
+                                    </div>
+                                    <div class="item-bd" style="display:none;"></div>
+                                </li>
+                            </ul>
+                            <a class="whole" href="
+    	    	        ./buzz?b=337&c=1
+            ">完整榜单</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="footer">
+        <span style="font-family:arial;">&copy;</span>2016 Baidu
+        <a target="_blank" href="http://www.baidu.com/duty/index.html">使用百度前必读</a>
+        <a href="./help">关于百度风云榜</a>
+        <span class="follow">关注我们：</span><a target="_blank" class="weibo" href="http://e.weibo.com/baidutop">&nbsp;</a>
+    </div>
+
+
+</div>
+<div class="fixed_rbox">
+
+    <a class="fixed_rbox_inner" href="javascript:;">风云榜轻应用<img style="display:block;margin-left:5px;" width="90" height="90" src="http://top.bdimg.com/frontend/static/common/qyy.png"/>扫描打开</a>
+
+
+</div>
+
+<script>var toptrackserver="http://top.bdimg.com/frontend/static";var href = location.href, domains = ["top.baidu.com.cn","top.baidu.com"];for(var i = 0, len = domains.length; i < len; i++){if(href.indexOf(domains[i])!==-1){BASE_URL = "http://"+domains[i]+"/";BASEURL = BASE_URL+"frontend";break;}}var BASE_DATE = "2016年11月05日", online = true, curpage = "category";</script>
+
+<script type="text/javascript">
+    var bds_config = {
+        "bdText":"掌握娱乐趋势，引领娱乐潮流！中国5亿网民正在热搜的娱乐节目都在这里了！【电影】【电视剧】【综艺】【动漫】各种排行应有尽有！[奥特曼]我正在浏览@百度搜索风云榜 #娱乐#榜单，详情请点击"
+    }
+</script>
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=2&amp;pos=left&amp;uid=655757" ></script>
+
+<div id="bdshare" data="" style="display:none;position:absolute;top:0;left:0;" class="bdshareBox bdshare_t bds_tools get-codes-bdshare"><a class="bds_qzone"></a><a class="bds_tsina"></a><a class="bds_tqq"></a><a class="bds_renren"></a><a class="bds_baidu"></a><a class="bds_tieba"></a></div>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript" src="http://top.bdimg.com/frontend/build/common/common.min.js?v=150709"></script>
+
+
+
+<script type="text/javascript" src="http://top.bdimg.com/frontend/build/category/category.js?v=150709"></script>
+
+
+<script src="http://top.bdimg.com/frontend/static/embed/nsclick.js?v=150709" type="text/javascript"></script>
+<!--
+<div style="display:none">--><script type="text/javascript">var clickmonkey ={log: function(){}};if(typeof ClickMonkey != "undefined"){clickmonkey = ClickMonkey(false);}var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F79a0e9c520104773e13ccd072bc956aa' type='text/javascript'%3E%3C/script%3E"));</script><!--</div>-->    </body>
+</html>
