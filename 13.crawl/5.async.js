@@ -3,10 +3,10 @@ async.series([
     function (cb) {
        cb(null,'2.txt');
     },
-    function (cb,data) {
+    function (cb) {
         cb(null,'3.txt');
     },
-    function (cb,data) {
+    function (cb) {
         cb(null,'我是3');
     }
 //result是一个数组
