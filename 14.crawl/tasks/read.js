@@ -38,10 +38,28 @@ exports.category = function(url,callback){
 }
 
 //传入一个分类下的电影列表，得到电影对象数组
-exports.movie = function(url,callback){
-
+exports.movie = function(url,cid,callback){
+  //向url地址发起请求，编码为null,这样得到的就是Buffer 错误对象 响应对象和响应体
+  request({url,encoding:null},function(err,response,body){
+      body =  iconv.decode(body,'gbk');//把gbk编码的buffer转成字符串
+      var $ = cheerio.load(body);//把字符串转成jquery对象
+      var items = [];
+      $('.keyword .list-title').each(function(){
+          var $this = $(this);
+          var item = {
+              name:$this.text(),
+              url:$this.attr('href'),
+              cid
+          }
+          items.push(item);
+      });
+      callback(null,items);
+  })
 }
 
 exports.category('http://top.baidu.com/category?c=1&fr=topindex',function(err,items){
         console.log(items);
+});
+exports.movie('http://top.baidu.com/buzz?b=340&c=1&fr=topcategory_c1',340,function(err,items){
+    console.log(items);
 });
